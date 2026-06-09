@@ -1,0 +1,1 @@
+81:        torch.floor_divide(self.indices_buf, vocab_size, out=self.beams_buf)

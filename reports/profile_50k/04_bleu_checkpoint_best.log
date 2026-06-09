@@ -1,0 +1,179 @@
+TransformerSuperModel(
+  (encoder): TransformerEncoder(
+    (embed_tokens): EmbeddingSuper(8848, 640, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (decoder): TransformerDecoder(
+    (embed_tokens): EmbeddingSuper(6632, 640, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:2	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+)
+/home/u4290247/HAT/checkpoints/iwslt14_super_full50000_fromscratch/checkpoint_best.pt
+Traceback (most recent call last):
+  File "generate.py", line 215, in <module>
+    cli_main()
+  File "generate.py", line 211, in cli_main
+    main(args)
+  File "generate.py", line 120, in main
+    hypos, decoder_times = task.inference_step(generator, models, sample, prefix_tokens)
+  File "/home/u4290247/HAT/hardware-aware-transformers/fairseq/tasks/fairseq_task.py", line 246, in inference_step
+    return generator.generate(models, sample, prefix_tokens=prefix_tokens)
+  File "/home/u4290247/miniconda3/envs/hat/lib/python3.7/site-packages/torch/autograd/grad_mode.py", line 26, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/u4290247/HAT/hardware-aware-transformers/fairseq/sequence_generator.py", line 378, in generate
+    scores.view(bsz, beam_size, -1)[:, :, :step],
+  File "/home/u4290247/HAT/hardware-aware-transformers/fairseq/search.py", line 81, in step
+    torch.div(self.indices_buf, vocab_size, out=self.beams_buf)
+RuntimeError: result type Float can't be cast to the desired output type Long
+Evaluate SacreBLEU score!
+Namespace(ignore_case=False, order=4, ref='/home/u4290247/HAT/checkpoints/iwslt14_super_full50000_fromscratch/exp/HAT_iwslt14deen_titanxp@137.8ms_bleu@34.7.yml_test_gen.out.ref', sacrebleu=True, sentence_bleu=False, sys='/home/u4290247/HAT/checkpoints/iwslt14_super_full50000_fromscratch/exp/HAT_iwslt14deen_titanxp@137.8ms_bleu@34.7.yml_test_gen.out.sys')
+Traceback (most recent call last):
+  File "score.py", line 83, in <module>
+    main()
+  File "score.py", line 79, in main
+    score(f)
+  File "score.py", line 54, in score
+    print(sacrebleu.corpus_bleu(fdsys, [fdref]))
+  File "/home/u4290247/.local/lib/python3.7/site-packages/sacrebleu/compat.py", line 37, in corpus_bleu
+    return metric.corpus_score(hypotheses, references)
+  File "/home/u4290247/.local/lib/python3.7/site-packages/sacrebleu/metrics/base.py", line 414, in corpus_score
+    self._check_corpus_score_args(hypotheses, references)
+  File "/home/u4290247/.local/lib/python3.7/site-packages/sacrebleu/metrics/base.py", line 258, in _check_corpus_score_args
+    raise TypeError(f'{prefix}: {err_msg}')
+TypeError: BLEU: Each element of `refs` should be a sequence of strings.

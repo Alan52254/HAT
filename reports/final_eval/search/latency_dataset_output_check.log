@@ -1,0 +1,28 @@
+-rw-r--r-- 1 43130 108336 8.3K Jun  1 00:31 latency_dataset.py
+
+/home/u4290247/HAT/reports/final_eval/search:
+total 19K
+drwxr-xr-x 2 43130 108336 4.0K Jun  9 00:55 .
+drwxr-xr-x 2 43130 108336 4.0K Jun  9 00:52 ..
+drwxr-xr-x 2 43130 108336 4.0K Jun  9 00:55 evo_search_v100
+-rw-r--r-- 1 43130 108336  166 Jun  9 00:55 evo_search_v100_skipped.log
+-rw-r--r-- 1 43130 108336 4.2K Jun  9 00:53 latency_dataset_dryrun.log
+-rw-r--r-- 1 43130 108336    0 Jun  9 00:55 latency_dataset_output_check.log
+-rw-r--r-- 1 43130 108336  14K Jun  9 00:55 latency_dataset_v100_small.log
+-rw-r--r-- 1 43130 108336    0 Jun  9 00:55 latency_dataset_v100_small.pkl
+drwxr-xr-x 2 43130 108336 4.0K Jun  9 00:55 latency_predictor_v100
+-rw-r--r-- 1 43130 108336  207 Jun  9 00:55 latency_predictor_v100_skipped.log
+
+latency_dataset:
+total 2.3M
+drwxr-xr-x 2 43130 108336 4.0K Jun  1 00:31 .
+drwxr-xr-x 2 43130 108336 4.0K Jun  9 00:46 ..
+-rw-r--r-- 1 43130 108336 289K Jun  1 00:31 iwslt14deen_gpu_titanxp_all.csv
+drwxr-xr-x 2 43130 108336 4.0K Jun  1 00:31 predictors
+-rw-r--r-- 1 43130 108336 285K Jun  1 00:31 wmt14ende_cpu_raspberrypi_all.csv
+-rw-r--r-- 1 43130 108336 289K Jun  1 00:31 wmt14ende_cpu_xeon_all.csv
+-rw-r--r-- 1 43130 108336 288K Jun  1 00:31 wmt14ende_gpu_titanxp_all.csv
+-rw-r--r-- 1 43130 108336 286K Jun  1 00:31 wmt14enfr_cpu_raspberrypi_all.csv
+-rw-r--r-- 1 43130 108336 288K Jun  1 00:31 wmt14enfr_cpu_xeon_all.csv
+-rw-r--r-- 1 43130 108336 288K Jun  1 00:31 wmt14enfr_gpu_titanxp_all.csv
+-rw-r--r-- 1 43130 108336 288K Jun  1 00:31 wmt19ende_gpu_titanxp_all.csv

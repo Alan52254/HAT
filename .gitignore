@@ -1,0 +1,45 @@
+# Large model checkpoints
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.idx
+
+# Archives
+*.tar
+*.tar.gz
+*.zip
+*.7z
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Conda / env
+.conda/
+env/
+venv/
+*.egg-info/
+
+# TensorBoard
+events.out.tfevents*
+tensorboard/
+
+# Dataset / generated binary data
+data/
+downloaded_models/
+checkpoints/
+*.pkl
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Secrets
+*.pem
+*.key
+.env
+id_rsa
+id_rsa.pub

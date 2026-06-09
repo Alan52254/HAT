@@ -1,0 +1,16 @@
+configs/iwslt14.de-en/latency_dataset/gpu_titanxp.yml
+configs/iwslt14.de-en/latency_predictor/gpu_titanxp.yml
+configs/wmt14.en-de/latency_dataset/cpu_raspberrypi.yml
+configs/wmt14.en-de/latency_dataset/cpu_xeon.yml
+configs/wmt14.en-de/latency_dataset/gpu_titanxp.yml
+configs/wmt14.en-de/latency_predictor/cpu_raspberrypi.yml
+configs/wmt14.en-de/latency_predictor/cpu_xeon.yml
+configs/wmt14.en-de/latency_predictor/gpu_titanxp.yml
+configs/wmt14.en-fr/latency_dataset/cpu_raspberrypi.yml
+configs/wmt14.en-fr/latency_dataset/cpu_xeon.yml
+configs/wmt14.en-fr/latency_dataset/gpu_titanxp.yml
+configs/wmt14.en-fr/latency_predictor/cpu_raspberrypi.yml
+configs/wmt14.en-fr/latency_predictor/cpu_xeon.yml
+configs/wmt14.en-fr/latency_predictor/gpu_titanxp.yml
+configs/wmt19.en-de/latency_dataset/gpu_titanxp.yml
+configs/wmt19.en-de/latency_predictor/gpu_titanxp.yml

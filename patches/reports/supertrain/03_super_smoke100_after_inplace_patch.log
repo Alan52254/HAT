@@ -1,0 +1,198 @@
+| Configs: Namespace(activation_dropout=0.0, activation_fn='relu', adam_betas='(0.9, 0.98)', adam_eps=1e-08, adaptive_input=False, adaptive_softmax_cutoff=None, adaptive_softmax_dropout=0, arch='transformersuper_iwslt_de_en', attention_dropout=0.0, beam=5, best_checkpoint_metric='loss', bucket_cap_mb=25, clip_norm=25, configs='configs/iwslt14.de-en/supertransformer/space1_smoke100.yml', cpu=False, criterion='label_smoothed_cross_entropy', curriculum=0, data='data/binary/iwslt14_de_en', dataset_impl=None, ddp_backend='c10d', decoder_arbitrary_ende_attn_all_subtransformer=None, decoder_arbitrary_ende_attn_choice=[-1, 1, 2], decoder_attention_heads=4, decoder_embed_choice=[640, 512], decoder_embed_dim=640, decoder_embed_dim_subtransformer=None, decoder_embed_path=None, decoder_ende_attention_heads_all_subtransformer=None, decoder_ende_attention_heads_choice=[4, 2], decoder_ffn_embed_dim=2048, decoder_ffn_embed_dim_all_subtransformer=None, decoder_ffn_embed_dim_choice=[2048, 1024, 512], decoder_input_dim=640, decoder_layer_num_choice=[6, 5, 4, 3, 2, 1], decoder_layers=6, decoder_learned_pos=False, decoder_normalize_before=False, decoder_output_dim=640, decoder_self_attention_heads_all_subtransformer=None, decoder_self_attention_heads_choice=[4, 2], device_id=0, disable_validation=False, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_port=-1, distributed_rank=0, distributed_world_size=1, diverse_beam_groups=-1, diverse_beam_strength=0.5, dropout=0.375, encoder_attention_heads=4, encoder_embed_choice=[640, 512], encoder_embed_dim=640, encoder_embed_dim_subtransformer=None, encoder_embed_path=None, encoder_ffn_embed_dim=2048, encoder_ffn_embed_dim_all_subtransformer=None, encoder_ffn_embed_dim_choice=[2048, 1024, 512], encoder_layer_num_choice=[6], encoder_layers=6, encoder_learned_pos=False, encoder_normalize_before=False, encoder_self_attention_heads_all_subtransformer=None, encoder_self_attention_heads_choice=[4, 2], find_unused_parameters=False, fix_batches_to_gpus=False, fp16=False, fp16_init_scale=128, fp16_scale_tolerance=0.0, fp16_scale_window=None, get_attn=False, keep_interval_updates=2, keep_last_epochs=20, label_smoothing=0.1, latcpu=False, latgpu=False, latiter=300, latsilent=False, lazy_load=False, left_pad_source='True', left_pad_target='False', lenpen=1, log_format=None, log_interval=10, lr=[0.0005], lr_scheduler='inverse_sqrt', match_source_len=False, max_epoch=0, max_len_a=0, max_len_b=200, max_sentences=None, max_sentences_valid=None, max_source_positions=1024, max_target_positions=1024, max_tokens=2048, max_tokens_valid=2048, max_update=100, maximize_best_checkpoint_metric=False, memory_efficient_fp16=False, min_len=1, min_loss_scale=0.0001, min_lr=-1, model_overrides='{}', nbest=1, no_beamable_mm=False, no_early_stop=False, no_epoch_checkpoints=False, no_last_checkpoints=False, no_progress_bar=False, no_repeat_ngram_size=0, no_save=False, no_save_optimizer_state=False, no_token_positional_embeddings=False, num_workers=10, optimizer='adam', optimizer_overrides='{}', path=None, pdb=False, prefix_size=0, print_alignment=False, profile_flops=False, profile_latency=False, qkv_dim=512, quiet=False, raw_text=False, remove_bpe=None, replace_unk=None, required_batch_size_multiple=8, reset_dataloader=False, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=False, restore_file='checkpoint_last.pt', results_path=None, sacrebleu=False, sampling=False, sampling_topk=-1, sampling_topp=-1.0, save_dir='../checkpoints/iwslt14_super_smoke100', save_interval=1, save_interval_updates=50, score_reference=False, seed=1, sentence_avg=False, share_all_embeddings=False, share_decoder_input_output_embed=False, skip_invalid_size_inputs_valid_test=False, source_lang='de', sub_configs=None, target_lang='en', task='translation', tbmf_wrapper=False, temperature=1.0, tensorboard_logdir='../checkpoints/iwslt14_super_smoke100/tensorboard', threshold_loss_scale=None, train_subset='train', train_subtransformer=False, unkpen=0, unnormalized=False, update_freq=[1], upsample_primary=1, use_bmuf=False, user_dir=None, valid_subset='valid', validate_interval=1, validate_subtransformer=False, vocab_original_scaling=False, warmup_init_lr=1e-07, warmup_updates=10000, weight_decay=0.0001)
+| [de] dictionary: 8848 types
+| [en] dictionary: 6632 types
+| loaded 7283 examples from: data/binary/iwslt14_de_en/valid.de-en.de
+| loaded 7283 examples from: data/binary/iwslt14_de_en/valid.de-en.en
+| data/binary/iwslt14_de_en valid de-en 7283 examples
+| Fallback to xavier initializer
+| Model: transformersuper_iwslt_de_en 
+| Criterion: LabelSmoothedCrossEntropyCriterion
+ 
+
+		WARNING!!! Training SuperTransformer
+
+
+| SuperTransformer Arch: TransformerSuperModel(
+  (encoder): TransformerEncoder(
+    (embed_tokens): EmbeddingSuper(8848, 640, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (decoder): TransformerDecoder(
+    (embed_tokens): EmbeddingSuper(6632, 640, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+) 
+
+| SuperTransofmer model size (without embedding weights): 55160064
+| Embedding layer size: 14151680 
+
+| Training on 1 GPUs
+| Max tokens per GPU = 2048 and max sentences per GPU = None 
+
+| no existing checkpoint found ../checkpoints/iwslt14_super_smoke100/checkpoint_last.pt
+| loading train data for epoch 0
+| loaded 160239 examples from: data/binary/iwslt14_de_en/train.de-en.de
+| loaded 160239 examples from: data/binary/iwslt14_de_en/train.de-en.en
+| data/binary/iwslt14_de_en train de-en 160239 examples
+| NOTICE: your device may support faster training with --fp16
+| epoch 001:     10 / 2264 loss=13.222, nll_loss=13.211, ppl=9479.05, wps=20404, ups=5, wpb=1680.727, bsz=69.818, num_updates=11, lr=6.4989e-07, gnorm=4.477, clip=0.000, oom=0.000, wall=2, train_wall=1, encoder_embed_dim=640, encoder_layer_num=6, encoder_ffn_embed_dim_0=2048, encoder_ffn_embed_dim_1=1024, encoder_ffn_embed_dim_2=1024, encoder_ffn_embed_dim_3=2048, encoder_ffn_embed_dim_4=1024, encoder_ffn_embed_dim_5=2048, encoder_self_attention_heads_0=4, encoder_self_attention_heads_1=2, encoder_self_attention_heads_2=4, encoder_self_attention_heads_3=2, encoder_self_attention_heads_4=4, encoder_self_attention_heads_5=2, decoder_embed_dim=512, decoder_layer_num=2, decoder_ffn_embed_dim_0=2048, decoder_ffn_embed_dim_1=512, decoder_self_attention_heads_0=2, decoder_self_attention_heads_1=2, decoder_ende_attention_heads_0=4, decoder_ende_attention_heads_1=2, decoder_arbitrary_ende_attn_0=1, decoder_arbitrary_ende_attn_1=1, decoder_arbitrary_ende_attn_2=2, decoder_arbitrary_ende_attn_3=1, decoder_arbitrary_ende_attn_4=1, decoder_arbitrary_ende_attn_5=-1
+| epoch 001:     20 / 2264 loss=13.257, nll_loss=13.249, ppl=9738.41, wps=22027, ups=7, wpb=1760.619, bsz=75.810, num_updates=21, lr=1.14979e-06, gnorm=4.523, clip=0.000, oom=0.000, wall=3, train_wall=2, encoder_embed_dim=640, encoder_layer_num=6, encoder_ffn_embed_dim_0=512, encoder_ffn_embed_dim_1=2048, encoder_ffn_embed_dim_2=1024, encoder_ffn_embed_dim_3=2048, encoder_ffn_embed_dim_4=1024, encoder_ffn_embed_dim_5=512, encoder_self_attention_heads_0=4, encoder_self_attention_heads_1=2, encoder_self_attention_heads_2=4, encoder_self_attention_heads_3=4, encoder_self_attention_heads_4=2, encoder_self_attention_heads_5=2, decoder_embed_dim=512, decoder_layer_num=4, decoder_ffn_embed_dim_0=1024, decoder_ffn_embed_dim_1=1024, decoder_ffn_embed_dim_2=1024, decoder_ffn_embed_dim_3=1024, decoder_self_attention_heads_0=4, decoder_self_attention_heads_1=2, decoder_self_attention_heads_2=4, decoder_self_attention_heads_3=4, decoder_ende_attention_heads_0=4, decoder_ende_attention_heads_1=2, decoder_ende_attention_heads_2=2, decoder_ende_attention_heads_3=4, decoder_arbitrary_ende_attn_0=2, decoder_arbitrary_ende_attn_1=-1, decoder_arbitrary_ende_attn_2=-1, decoder_arbitrary_ende_attn_3=-1, decoder_arbitrary_ende_attn_4=-1, decoder_arbitrary_ende_attn_5=-1
+| epoch 001:     30 / 2264 loss=13.251, nll_loss=13.241, ppl=9683.37, wps=21685, ups=8, wpb=1713.774, bsz=70.710, num_updates=31, lr=1.64969e-06, gnorm=4.517, clip=0.000, oom=0.000, wall=4, train_wall=2, encoder_embed_dim=512, encoder_layer_num=6, encoder_ffn_embed_dim_0=2048, encoder_ffn_embed_dim_1=1024, encoder_ffn_embed_dim_2=2048, encoder_ffn_embed_dim_3=2048, encoder_ffn_embed_dim_4=2048, encoder_ffn_embed_dim_5=2048, encoder_self_attention_heads_0=2, encoder_self_attention_heads_1=4, encoder_self_attention_heads_2=2, encoder_self_attention_heads_3=4, encoder_self_attention_heads_4=4, encoder_self_attention_heads_5=2, decoder_embed_dim=640, decoder_layer_num=4, decoder_ffn_embed_dim_0=512, decoder_ffn_embed_dim_1=1024, decoder_ffn_embed_dim_2=512, decoder_ffn_embed_dim_3=512, decoder_self_attention_heads_0=2, decoder_self_attention_heads_1=4, decoder_self_attention_heads_2=2, decoder_self_attention_heads_3=4, decoder_ende_attention_heads_0=4, decoder_ende_attention_heads_1=4, decoder_ende_attention_heads_2=2, decoder_ende_attention_heads_3=2, decoder_arbitrary_ende_attn_0=2, decoder_arbitrary_ende_attn_1=2, decoder_arbitrary_ende_attn_2=-1, decoder_arbitrary_ende_attn_3=2, decoder_arbitrary_ende_attn_4=1, decoder_arbitrary_ende_attn_5=1
+| epoch 001:     40 / 2264 loss=13.236, nll_loss=13.224, ppl=9564.72, wps=21256, ups=9, wpb=1725.024, bsz=66.927, num_updates=41, lr=2.14959e-06, gnorm=4.577, clip=0.000, oom=0.000, wall=5, train_wall=3, encoder_embed_dim=512, encoder_layer_num=6, encoder_ffn_embed_dim_0=512, encoder_ffn_embed_dim_1=2048, encoder_ffn_embed_dim_2=1024, encoder_ffn_embed_dim_3=2048, encoder_ffn_embed_dim_4=2048, encoder_ffn_embed_dim_5=512, encoder_self_attention_heads_0=4, encoder_self_attention_heads_1=2, encoder_self_attention_heads_2=2, encoder_self_attention_heads_3=4, encoder_self_attention_heads_4=4, encoder_self_attention_heads_5=2, decoder_embed_dim=640, decoder_layer_num=4, decoder_ffn_embed_dim_0=2048, decoder_ffn_embed_dim_1=2048, decoder_ffn_embed_dim_2=2048, decoder_ffn_embed_dim_3=2048, decoder_self_attention_heads_0=4, decoder_self_attention_heads_1=2, decoder_self_attention_heads_2=4, decoder_self_attention_heads_3=2, decoder_ende_attention_heads_0=2, decoder_ende_attention_heads_1=2, decoder_ende_attention_heads_2=2, decoder_ende_attention_heads_3=2, decoder_arbitrary_ende_attn_0=-1, decoder_arbitrary_ende_attn_1=2, decoder_arbitrary_ende_attn_2=-1, decoder_arbitrary_ende_attn_3=1, decoder_arbitrary_ende_attn_4=-1, decoder_arbitrary_ende_attn_5=2
+/home/u4290247/HAT/hardware-aware-transformers/fairseq/optim/adam.py:142: UserWarning: This overload of add_ is deprecated:
+	add_(Number alpha, Tensor other)
+Consider using one of the following signatures instead:
+	add_(Tensor other, *, Number alpha) (Triggered internally at  /opt/conda/conda-bld/pytorch_1607370128159/work/torch/csrc/utils/python_arg_parser.cpp:882.)
+  exp_avg.mul_(beta1).add_(1 - beta1, grad)
+| epoch 001 | validate on 'valid' subset | loss 13.108 | nll_loss 13.073 | ppl 8619.54 | num_updates 50 | largest_arbitrary1_loss 13.108 | largest_arbitrary1_nll_loss 13.073
+| epoch 001 | validate on 'valid' subset | loss 13.124 | nll_loss 13.107 | ppl 8825.43 | num_updates 50 | smallest_arbitrary1_loss 13.124 | smallest_arbitrary1_nll_loss 13.107
+| saved checkpoint ../checkpoints/iwslt14_super_smoke100/checkpoint_1_50.pt (epoch 1 @ 50 updates) (writing took 3.039588689804077 seconds)
+| epoch 001:     50 / 2264 loss=13.208, nll_loss=13.193, ppl=9361.39, wps=7305, ups=4, wpb=1736.039, bsz=67.137, num_updates=51, lr=2.64949e-06, gnorm=4.519, clip=0.000, oom=0.000, wall=13, train_wall=4, encoder_embed_dim=512, encoder_layer_num=6, encoder_ffn_embed_dim_0=2048, encoder_ffn_embed_dim_1=1024, encoder_ffn_embed_dim_2=512, encoder_ffn_embed_dim_3=2048, encoder_ffn_embed_dim_4=2048, encoder_ffn_embed_dim_5=2048, encoder_self_attention_heads_0=2, encoder_self_attention_heads_1=4, encoder_self_attention_heads_2=2, encoder_self_attention_heads_3=4, encoder_self_attention_heads_4=2, encoder_self_attention_heads_5=2, decoder_embed_dim=512, decoder_layer_num=1, decoder_ffn_embed_dim_0=1024, decoder_self_attention_heads_0=4, decoder_ende_attention_heads_0=4, decoder_arbitrary_ende_attn_0=-1, decoder_arbitrary_ende_attn_1=1, decoder_arbitrary_ende_attn_2=2, decoder_arbitrary_ende_attn_3=2, decoder_arbitrary_ende_attn_4=1, decoder_arbitrary_ende_attn_5=2
+| epoch 001:     60 / 2264 loss=13.177, nll_loss=13.158, ppl=9140.38, wps=8193, ups=4, wpb=1734.967, bsz=66.754, num_updates=61, lr=3.14939e-06, gnorm=4.511, clip=0.000, oom=0.000, wall=14, train_wall=5, encoder_embed_dim=512, encoder_layer_num=6, encoder_ffn_embed_dim_0=2048, encoder_ffn_embed_dim_1=1024, encoder_ffn_embed_dim_2=2048, encoder_ffn_embed_dim_3=512, encoder_ffn_embed_dim_4=2048, encoder_ffn_embed_dim_5=2048, encoder_self_attention_heads_0=2, encoder_self_attention_heads_1=2, encoder_self_attention_heads_2=4, encoder_self_attention_heads_3=4, encoder_self_attention_heads_4=2, encoder_self_attention_heads_5=4, decoder_embed_dim=512, decoder_layer_num=4, decoder_ffn_embed_dim_0=512, decoder_ffn_embed_dim_1=512, decoder_ffn_embed_dim_2=1024, decoder_ffn_embed_dim_3=512, decoder_self_attention_heads_0=4, decoder_self_attention_heads_1=4, decoder_self_attention_heads_2=4, decoder_self_attention_heads_3=4, decoder_ende_attention_heads_0=2, decoder_ende_attention_heads_1=4, decoder_ende_attention_heads_2=4, decoder_ende_attention_heads_3=2, decoder_arbitrary_ende_attn_0=-1, decoder_arbitrary_ende_attn_1=-1, decoder_arbitrary_ende_attn_2=2, decoder_arbitrary_ende_attn_3=-1, decoder_arbitrary_ende_attn_4=1, decoder_arbitrary_ende_attn_5=-1
+| epoch 001:     70 / 2264 loss=13.134, nll_loss=13.110, ppl=8841.42, wps=8982, ups=5, wpb=1732.268, bsz=69.183, num_updates=71, lr=3.64929e-06, gnorm=4.506, clip=0.000, oom=0.000, wall=15, train_wall=5, encoder_embed_dim=640, encoder_layer_num=6, encoder_ffn_embed_dim_0=2048, encoder_ffn_embed_dim_1=2048, encoder_ffn_embed_dim_2=512, encoder_ffn_embed_dim_3=512, encoder_ffn_embed_dim_4=1024, encoder_ffn_embed_dim_5=1024, encoder_self_attention_heads_0=2, encoder_self_attention_heads_1=4, encoder_self_attention_heads_2=4, encoder_self_attention_heads_3=2, encoder_self_attention_heads_4=4, encoder_self_attention_heads_5=4, decoder_embed_dim=512, decoder_layer_num=3, decoder_ffn_embed_dim_0=512, decoder_ffn_embed_dim_1=1024, decoder_ffn_embed_dim_2=2048, decoder_self_attention_heads_0=2, decoder_self_attention_heads_1=2, decoder_self_attention_heads_2=4, decoder_ende_attention_heads_0=2, decoder_ende_attention_heads_1=4, decoder_ende_attention_heads_2=2, decoder_arbitrary_ende_attn_0=1, decoder_arbitrary_ende_attn_1=1, decoder_arbitrary_ende_attn_2=-1, decoder_arbitrary_ende_attn_3=-1, decoder_arbitrary_ende_attn_4=1, decoder_arbitrary_ende_attn_5=1
+| epoch 001:     80 / 2264 loss=13.087, nll_loss=13.058, ppl=8528.14, wps=9741, ups=5, wpb=1738.235, bsz=69.630, num_updates=81, lr=4.14919e-06, gnorm=4.454, clip=0.000, oom=0.000, wall=16, train_wall=6, encoder_embed_dim=512, encoder_layer_num=6, encoder_ffn_embed_dim_0=1024, encoder_ffn_embed_dim_1=1024, encoder_ffn_embed_dim_2=512, encoder_ffn_embed_dim_3=2048, encoder_ffn_embed_dim_4=1024, encoder_ffn_embed_dim_5=2048, encoder_self_attention_heads_0=2, encoder_self_attention_heads_1=4, encoder_self_attention_heads_2=2, encoder_self_attention_heads_3=4, encoder_self_attention_heads_4=4, encoder_self_attention_heads_5=4, decoder_embed_dim=512, decoder_layer_num=4, decoder_ffn_embed_dim_0=2048, decoder_ffn_embed_dim_1=2048, decoder_ffn_embed_dim_2=1024, decoder_ffn_embed_dim_3=1024, decoder_self_attention_heads_0=2, decoder_self_attention_heads_1=4, decoder_self_attention_heads_2=4, decoder_self_attention_heads_3=2, decoder_ende_attention_heads_0=4, decoder_ende_attention_heads_1=2, decoder_ende_attention_heads_2=4, decoder_ende_attention_heads_3=4, decoder_arbitrary_ende_attn_0=1, decoder_arbitrary_ende_attn_1=-1, decoder_arbitrary_ende_attn_2=2, decoder_arbitrary_ende_attn_3=-1, decoder_arbitrary_ende_attn_4=2, decoder_arbitrary_ende_attn_5=-1
+| epoch 001:     90 / 2264 loss=13.041, nll_loss=13.007, ppl=8231.34, wps=10396, ups=5, wpb=1751.978, bsz=74.286, num_updates=91, lr=4.64909e-06, gnorm=4.478, clip=0.000, oom=0.000, wall=17, train_wall=7, encoder_embed_dim=640, encoder_layer_num=6, encoder_ffn_embed_dim_0=512, encoder_ffn_embed_dim_1=512, encoder_ffn_embed_dim_2=1024, encoder_ffn_embed_dim_3=1024, encoder_ffn_embed_dim_4=1024, encoder_ffn_embed_dim_5=2048, encoder_self_attention_heads_0=2, encoder_self_attention_heads_1=2, encoder_self_attention_heads_2=2, encoder_self_attention_heads_3=2, encoder_self_attention_heads_4=2, encoder_self_attention_heads_5=4, decoder_embed_dim=640, decoder_layer_num=1, decoder_ffn_embed_dim_0=2048, decoder_self_attention_heads_0=2, decoder_ende_attention_heads_0=2, decoder_arbitrary_ende_attn_0=1, decoder_arbitrary_ende_attn_1=-1, decoder_arbitrary_ende_attn_2=-1, decoder_arbitrary_ende_attn_3=2, decoder_arbitrary_ende_attn_4=2, decoder_arbitrary_ende_attn_5=-1
+| epoch 001 | validate on 'valid' subset | loss 12.405 | nll_loss 12.291 | ppl 5009.91 | num_updates 100 | best_loss 12.4048 | largest_arbitrary1_loss 12.405 | largest_arbitrary1_nll_loss 12.291
+| epoch 001 | validate on 'valid' subset | loss 12.906 | nll_loss 12.866 | ppl 7464.56 | num_updates 100 | best_loss 12.9065 | smallest_arbitrary1_loss 12.906 | smallest_arbitrary1_nll_loss 12.866
+| saved checkpoint ../checkpoints/iwslt14_super_smoke100/checkpoint_1_100.pt (epoch 1 @ 100 updates) (writing took 3.1893813610076904 seconds)
+| epoch 001 | loss 12.990 | nll_loss 12.951 | ppl 7918.46 | wps 7281 | ups 4 | wpb 1757.850 | bsz 74.240 | num_updates 100 | lr 5.099e-06 | gnorm 4.442 | clip 0.000 | oom 0.000 | wall 25 | train_wall 7
+| epoch 001 | validate on 'valid' subset | loss 12.405 | nll_loss 12.291 | ppl 5009.91 | num_updates 100 | best_loss 12.4048 | largest_arbitrary1_loss 12.405 | largest_arbitrary1_nll_loss 12.291
+| epoch 001 | validate on 'valid' subset | loss 12.906 | nll_loss 12.866 | ppl 7464.56 | num_updates 100 | best_loss 12.9065 | smallest_arbitrary1_loss 12.906 | smallest_arbitrary1_nll_loss 12.866
+| saved checkpoint ../checkpoints/iwslt14_super_smoke100/checkpoint_1_100.pt (epoch 1 @ 100 updates) (writing took 3.111748456954956 seconds)
+| Done training in 32.4 seconds

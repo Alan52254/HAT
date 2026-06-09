@@ -1,0 +1,36 @@
+usage: latency_predictor.py [-h] --configs CONFIGS
+                            [--dataset-path DATASET_PATH]
+                            [--lat-dataset-path LAT_DATASET_PATH]
+                            [--feature-norm FEATURE_NORM [FEATURE_NORM ...]]
+                            [--lat-norm LAT_NORM] [--feature-dim FEATURE_DIM]
+                            [--hidden-dim HIDDEN_DIM]
+                            [--hidden-layer-num HIDDEN_LAYER_NUM]
+                            [--ckpt-path CKPT_PATH]
+                            [--train-steps TRAIN_STEPS] [--bsz BSZ] [--lr LR]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --configs CONFIGS
+  --dataset-path DATASET_PATH
+  --lat-dataset-path LAT_DATASET_PATH
+                        the path to read latency dataset
+  --feature-norm FEATURE_NORM [FEATURE_NORM ...]
+                        normalizing factor for each feature
+  --lat-norm LAT_NORM   normalizing factor for latency
+  --feature-dim FEATURE_DIM
+                        dimension of feature vector
+  --hidden-dim HIDDEN_DIM
+                        hidden dimension of FC layers in latency predictor
+  --hidden-layer-num HIDDEN_LAYER_NUM
+                        number of FC layers
+  --ckpt-path CKPT_PATH
+                        path to save latency predictor weights
+  --train-steps TRAIN_STEPS
+                        latency predictor training steps
+  --bsz BSZ             latency predictor training batch size
+  --lr LR               latency predictor training learning rate
+
+Args that start with '--' can also be set in a config file (specified via
+--configs). Config file syntax allows: key=value, flag=true, stuff=[a,b,c]
+(for details, see syntax at https://goo.gl/R74nmi). In general, command-line
+values override config file values which override defaults.

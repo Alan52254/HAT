@@ -1,0 +1,24 @@
+--- /home/u4290247/HAT/reports/final_eval/patches/search.py.bak_before_patch	2026-06-09 00:44:37.331029335 +0800
++++ fairseq/search.py	2026-06-09 00:44:48.909590217 +0800
+@@ -78,7 +78,7 @@
+             ),
+             out=(self.scores_buf, self.indices_buf),
+         )
+-        torch.div(self.indices_buf, vocab_size, out=self.beams_buf)
++        torch.floor_divide(self.indices_buf, vocab_size, out=self.beams_buf)
+         self.indices_buf.fmod_(vocab_size)
+         return self.scores_buf, self.indices_buf, self.beams_buf
+ 
+--- /home/u4290247/HAT/reports/final_eval/patches/score.py.bak_before_patch	2026-06-09 00:44:37.297697045 +0800
++++ score.py	2026-06-09 00:44:49.256648564 +0800
+@@ -51,7 +51,9 @@
+ 
+         def score(fdsys):
+             with open(args.ref) as fdref:
+-                print(sacrebleu.corpus_bleu(fdsys, [fdref]))
++                sys_lines = [line.strip() for line in fdsys]
++                ref_lines = [line.strip() for line in fdref]
++                print(sacrebleu.corpus_bleu(sys_lines, [ref_lines]))
+     elif args.sentence_bleu:
+         def score(fdsys):
+             with open(args.ref) as fdref:

@@ -1,0 +1,17 @@
+configs/iwslt14.de-en/average_checkpoint.sh
+configs/iwslt14.de-en/evo_search/iwslt14deen_titanxp.yml
+configs/iwslt14.de-en/get_preprocessed.sh
+configs/iwslt14.de-en/latency_dataset/gpu_titanxp.yml
+configs/iwslt14.de-en/latency_predictor/gpu_titanxp.yml
+configs/iwslt14.de-en/preprocess.sh
+configs/iwslt14.de-en/subtransformer/HAT_iwslt14deen_titanxp@109.0ms_bleu@34.5.yml
+configs/iwslt14.de-en/subtransformer/HAT_iwslt14deen_titanxp@137.8ms_bleu@34.7.yml
+configs/iwslt14.de-en/subtransformer/HAT_iwslt14deen_titanxp@168.8ms_bleu@34.8.yml
+configs/iwslt14.de-en/subtransformer/HAT_iwslt14deen_titanxp@45.6ms_bleu@33.4.yml
+configs/iwslt14.de-en/subtransformer/HAT_iwslt14deen_titanxp@74.5ms_bleu@34.2.yml
+configs/iwslt14.de-en/subtransformer/common.yml
+configs/iwslt14.de-en/supertransformer/space1.yml
+configs/iwslt14.de-en/supertransformer/space1_full50000_fromscratch.yml
+configs/iwslt14.de-en/supertransformer/space1_smoke100.yml
+configs/iwslt14.de-en/supertransformer/space1_smoke1000.yml
+configs/iwslt14.de-en/test.sh

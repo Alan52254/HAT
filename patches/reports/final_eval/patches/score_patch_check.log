@@ -1,0 +1,7 @@
+22:    parser.add_argument('--sacrebleu', action='store_true',
+23:                        help='score with sacrebleu')
+49:    if args.sacrebleu:
+50:        import sacrebleu
+54:                sys_lines = [line.strip() for line in fdsys]
+55:                ref_lines = [line.strip() for line in fdref]
+56:                print(sacrebleu.corpus_bleu(sys_lines, [ref_lines]))

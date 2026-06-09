@@ -1,0 +1,43 @@
+lat-dataset-path: ../reports/final_eval/search/hat_pipeline_20260609_01/latency_dataset_v100_50.csv
+lat-dataset-size: 50
+latgpu: True
+latiter: 20
+latsilent: True
+
+# model
+arch: transformersuper_iwslt_de_en
+max-tokens: 4096
+data: data/binary/iwslt14_de_en
+source-lang: de
+target-lang: en
+
+# SuperTransformer configs, matching the 50K from-scratch search space
+encoder-embed-dim: 640
+decoder-embed-dim: 640
+
+encoder-ffn-embed-dim: 2048
+decoder-ffn-embed-dim: 2048
+
+encoder-layers: 6
+decoder-layers: 6
+
+encoder-attention-heads: 4
+decoder-attention-heads: 4
+
+qkv-dim: 512
+
+# SubTransformers search space
+encoder-embed-choice: [640, 512]
+decoder-embed-choice: [640, 512]
+
+encoder-ffn-embed-dim-choice: [2048, 1024, 512]
+decoder-ffn-embed-dim-choice: [2048, 1024, 512]
+
+encoder-layer-num-choice: [6]
+decoder-layer-num-choice: [6, 5, 4, 3, 2, 1]
+
+encoder-self-attention-heads-choice: [4, 2]
+decoder-self-attention-heads-choice: [4, 2]
+decoder-ende-attention-heads-choice: [4, 2]
+
+decoder-arbitrary-ende-attn-choice: [-1, 1, 2]

@@ -1,0 +1,10 @@
+lat-dataset-path: ../reports/final_eval/search/hat_pipeline_20260609_01/latency_dataset_v100_50.csv
+feature-norm: [640, 6, 2048, 6, 640, 6, 2048, 6, 6, 2]
+lat-norm: 200
+feature-dim: 10
+hidden-dim: 400
+hidden-layer-num: 3
+ckpt-path: ../reports/final_eval/search/hat_pipeline_20260609_01/predictor/latency_predictor_v100_50.pt
+train-steps: 1000
+bsz: 16
+lr: 1e-5

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "train.py", line 381, in <module>
+    cli_main()
+  File "train.py", line 377, in cli_main
+    main(args)
+  File "train.py", line 35, in main
+    checkpoint_utils.verify_checkpoint_directory(args.save_dir)
+  File "/home/u4290247/HAT/hardware-aware-transformers/fairseq/checkpoint_utils.py", line 368, in verify_checkpoint_directory
+    os.remove(temp_file_path)
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoints/ts/final_eval/search/hat_pipeline_20260609_01/candidates/predictor_only_topk/top_1/dummy'

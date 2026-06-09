@@ -1,0 +1,170 @@
+Namespace(activation_dropout=0.0, activation_fn='relu', adaptive_input=False, adaptive_softmax_cutoff=None, adaptive_softmax_dropout=0, arch='transformersuper_iwslt_de_en', attention_dropout=0.0, beam=5, best_checkpoint_metric='loss', bucket_cap_mb=25, clip_norm=25, configs='../reports/final_eval/search/hat_pipeline_20260609_01/configs/latency_dataset_v100_50.yml', cpu=False, criterion='cross_entropy', curriculum=0, data='data/binary/iwslt14_de_en', dataset_impl=None, ddp_backend='c10d', decoder_arbitrary_ende_attn_all_subtransformer=None, decoder_arbitrary_ende_attn_choice=[-1, 1, 2], decoder_attention_heads=4, decoder_embed_choice=[640, 512], decoder_embed_dim=640, decoder_embed_dim_subtransformer=None, decoder_embed_path=None, decoder_ende_attention_heads_all_subtransformer=None, decoder_ende_attention_heads_choice=[4, 2], decoder_ffn_embed_dim=2048, decoder_ffn_embed_dim_all_subtransformer=None, decoder_ffn_embed_dim_choice=[2048, 1024, 512], decoder_input_dim=640, decoder_layer_num_choice=[6, 5, 4, 3, 2, 1], decoder_layers=6, decoder_learned_pos=False, decoder_normalize_before=False, decoder_output_dim=640, decoder_self_attention_heads_all_subtransformer=None, decoder_self_attention_heads_choice=[4, 2], device_id=0, disable_validation=False, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_port=-1, distributed_rank=0, distributed_world_size=1, diverse_beam_groups=-1, diverse_beam_strength=0.5, dropout=0.1, encoder_attention_heads=4, encoder_embed_choice=[640, 512], encoder_embed_dim=640, encoder_embed_dim_subtransformer=None, encoder_embed_path=None, encoder_ffn_embed_dim=2048, encoder_ffn_embed_dim_all_subtransformer=None, encoder_ffn_embed_dim_choice=[2048, 1024, 512], encoder_layer_num_choice=[6], encoder_layers=6, encoder_learned_pos=False, encoder_normalize_before=False, encoder_self_attention_heads_all_subtransformer=None, encoder_self_attention_heads_choice=[4, 2], find_unused_parameters=False, fix_batches_to_gpus=False, force_anneal=None, fp16=False, fp16_init_scale=128, fp16_scale_tolerance=0.0, fp16_scale_window=None, get_attn=False, keep_interval_updates=-1, keep_last_epochs=-1, lat_dataset_path='../reports/final_eval/search/hat_pipeline_20260609_01/latency_dataset_v100_50.csv', lat_dataset_size=50, latcpu=False, latgpu=True, latiter=20, latsilent=True, lazy_load=False, left_pad_source='True', left_pad_target='False', lenpen=1, log_format=None, log_interval=1000, lr=[0.25], lr_scheduler='fixed', lr_shrink=0.1, match_source_len=False, max_epoch=0, max_len_a=0, max_len_b=200, max_sentences=None, max_sentences_valid=None, max_source_positions=1024, max_target_positions=1024, max_tokens=4096, max_tokens_valid=4096, max_update=0, maximize_best_checkpoint_metric=False, memory_efficient_fp16=False, min_len=1, min_loss_scale=0.0001, min_lr=-1, model_overrides='{}', momentum=0.99, nbest=1, no_beamable_mm=False, no_early_stop=False, no_epoch_checkpoints=False, no_last_checkpoints=False, no_progress_bar=False, no_repeat_ngram_size=0, no_save=False, no_save_optimizer_state=False, no_token_positional_embeddings=False, num_workers=10, optimizer='nag', optimizer_overrides='{}', path=None, pdb=False, prefix_size=0, print_alignment=False, profile_latency=False, qkv_dim=512, quiet=False, raw_text=False, remove_bpe=None, replace_unk=None, required_batch_size_multiple=8, reset_dataloader=False, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=False, restore_file='checkpoint_last.pt', results_path=None, sacrebleu=False, sampling=False, sampling_topk=-1, sampling_topp=-1.0, save_dir=None, save_interval=1, save_interval_updates=0, score_reference=False, seed=1, sentence_avg=False, share_all_embeddings=False, share_decoder_input_output_embed=False, skip_invalid_size_inputs_valid_test=False, source_lang='de', target_lang='en', task='translation', tbmf_wrapper=False, temperature=1.0, tensorboard_logdir='', threshold_loss_scale=None, train_subset='train', unkpen=0, unnormalized=False, update_freq=[1], upsample_primary=1, use_bmuf=False, user_dir=None, valid_subset='valid', validate_interval=1, vocab_original_scaling=False, warmup_updates=0, weight_decay=0.0)
+| [de] dictionary: 8848 types
+| [en] dictionary: 6632 types
+| Fallback to xavier initializer
+TransformerSuperModel(
+  (encoder): TransformerEncoder(
+    (embed_tokens): EmbeddingSuper(8848, 640, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (decoder): TransformerDecoder(
+    (embed_tokens): EmbeddingSuper(6632, 640, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerDecoderLayer(
+        (self_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (self_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttentionSuper	num_heads:4	 qkv_dim:512
+          (out_proj): LinearSuper(in_features=512, out_features=640, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+        (fc1): LinearSuper(in_features=640, out_features=2048, bias=True)
+        (fc2): LinearSuper(in_features=2048, out_features=640, bias=True)
+        (final_layer_norm): LayerNormSuper((640,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+)
+Traceback (most recent call last):
+  File "latency_dataset.py", line 193, in <module>
+    cli_main()
+  File "latency_dataset.py", line 190, in cli_main
+    main(args)
+  File "latency_dataset.py", line 60, in main
+    model.cuda()
+  File "/home/u4290247/miniconda3/envs/hat/lib/python3.7/site-packages/torch/nn/modules/module.py", line 463, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "/home/u4290247/miniconda3/envs/hat/lib/python3.7/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/home/u4290247/miniconda3/envs/hat/lib/python3.7/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/home/u4290247/miniconda3/envs/hat/lib/python3.7/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/home/u4290247/miniconda3/envs/hat/lib/python3.7/site-packages/torch/nn/modules/module.py", line 463, in <lambda>
+    return self._apply(lambda t: t.cuda(device))
+  File "/home/u4290247/miniconda3/envs/hat/lib/python3.7/site-packages/torch/cuda/__init__.py", line 172, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available

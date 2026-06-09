@@ -1,0 +1,42 @@
+# HAT Final Evaluation Environment
+Tue Jun  9 00:45:24 CST 2026
+y0ny9xctr1780243117444-2b2bl
+/home/u4290247/HAT/hardware-aware-transformers
+
+
+/home/u4290247/miniconda3/envs/hat/bin/python
+Python 3.7.12
+
+torch= 1.7.1
+torch cuda= 10.2
+cuda available= False
+device count= 0
+gpu= NO GPU
+
+NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.
+
+
+70e5a279d080670208249fdd98ed731fa9bcc466
+ M fairseq/data/data_utils_fast.cpp
+ M fairseq/data/token_block_utils_fast.c
+ M fairseq/modules/multihead_attention_super.py
+ M fairseq/search.py
+ M score.py
+?? build/
+?? configs/iwslt14.de-en/supertransformer/space1_full50000_fromscratch.yml
+?? configs/iwslt14.de-en/supertransformer/space1_smoke100.yml
+?? configs/iwslt14.de-en/supertransformer/space1_smoke1000.yml
+?? data/
+?? downloaded_models/
+?? fairseq.egg-info/
+?? fairseq/__pycache__/
+?? fairseq/criterions/__pycache__/
+?? fairseq/data/__pycache__/
+?? fairseq/data/data_utils_fast.cpython-37m-x86_64-linux-gnu.so
+?? fairseq/data/token_block_utils_fast.cpython-37m-x86_64-linux-gnu.so
+?? fairseq/libbleu.cpython-37m-x86_64-linux-gnu.so
+?? fairseq/models/__pycache__/
+?? fairseq/modules/__pycache__/
+?? fairseq/optim/__pycache__/
+?? fairseq/optim/lr_scheduler/__pycache__/
+?? fairseq/tasks/__pycache__/

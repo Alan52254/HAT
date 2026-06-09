@@ -1,0 +1,15 @@
+evo-iter: 1
+population-size: 5
+parent-size: 3
+mutation-size: 1
+crossover-size: 1
+mutation-prob: 0.3
+
+ckpt-path: ../reports/final_eval/search/hat_pipeline_20260609_01/predictor/latency_predictor_fallback_titanxp.pt
+feature-norm: [640, 6, 2048, 6, 640, 6, 2048, 6, 6, 2]
+lat-norm: 200
+
+restore-file: /home/u4290247/HAT/checkpoints/iwslt14_super_full50000_fromscratch/checkpoint_best.pt
+write-config-path: ../reports/final_eval/search/hat_pipeline_20260609_01/candidates/fallback_titanxp_constraint_90_micro_best.yml
+latency-constraint: 90
+valid-cnt-max: 1

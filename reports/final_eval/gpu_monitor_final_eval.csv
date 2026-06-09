@@ -1,0 +1,390 @@
+Tue Jun  9 00:59:56 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 00:59:56.283, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.38 W
+Tue Jun  9 00:59:57 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 00:59:57.307, Tesla V100-SXM2-32GB, 3 MiB, 32768 MiB, 0 %, 40.87 W
+Tue Jun  9 00:59:58 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 00:59:58.368, Tesla V100-SXM2-32GB, 15 MiB, 32768 MiB, 0 %, 40.87 W
+Tue Jun  9 00:59:59 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 00:59:59.391, Tesla V100-SXM2-32GB, 759 MiB, 32768 MiB, 12 %, 56.08 W
+Tue Jun  9 01:00:00 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:00.422, Tesla V100-SXM2-32GB, 1305 MiB, 32768 MiB, 0 %, 56.05 W
+Tue Jun  9 01:00:01 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:01.457, Tesla V100-SXM2-32GB, 1919 MiB, 32768 MiB, 39 %, 56.57 W
+Tue Jun  9 01:00:02 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:02.475, Tesla V100-SXM2-32GB, 2135 MiB, 32768 MiB, 8 %, 199.00 W
+Tue Jun  9 01:00:03 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:03.506, Tesla V100-SXM2-32GB, 2399 MiB, 32768 MiB, 8 %, 207.17 W
+Tue Jun  9 01:00:04 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:04.528, Tesla V100-SXM2-32GB, 2403 MiB, 32768 MiB, 12 %, 69.78 W
+Tue Jun  9 01:00:05 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:05.559, Tesla V100-SXM2-32GB, 2715 MiB, 32768 MiB, 44 %, 70.27 W
+Tue Jun  9 01:00:06 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:06.594, Tesla V100-SXM2-32GB, 2891 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:00:07 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:07.617, Tesla V100-SXM2-32GB, 3071 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:00:08 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:08.650, Tesla V100-SXM2-32GB, 3263 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:00:09 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:09.670, Tesla V100-SXM2-32GB, 3467 MiB, 32768 MiB, 16 %, 69.78 W
+Tue Jun  9 01:00:10 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:10.703, Tesla V100-SXM2-32GB, 3683 MiB, 32768 MiB, 88 %, 69.78 W
+Tue Jun  9 01:00:11 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:11.735, Tesla V100-SXM2-32GB, 4151 MiB, 32768 MiB, 8 %, 226.55 W
+Tue Jun  9 01:00:12 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:12.761, Tesla V100-SXM2-32GB, 4405 MiB, 32768 MiB, 11 %, 69.78 W
+Tue Jun  9 01:00:13 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:13.795, Tesla V100-SXM2-32GB, 4669 MiB, 32768 MiB, 82 %, 80.57 W
+Tue Jun  9 01:00:14 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:14.817, Tesla V100-SXM2-32GB, 4939 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:00:15 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:15.848, Tesla V100-SXM2-32GB, 5221 MiB, 32768 MiB, 43 %, 228.51 W
+Tue Jun  9 01:00:16 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:16.880, Tesla V100-SXM2-32GB, 5515 MiB, 32768 MiB, 58 %, 68.80 W
+Tue Jun  9 01:00:17 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:17.913, Tesla V100-SXM2-32GB, 5821 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:00:18 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:18.945, Tesla V100-SXM2-32GB, 6139 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:00:19 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:19.977, Tesla V100-SXM2-32GB, 6811 MiB, 32768 MiB, 71 %, 241.68 W
+Tue Jun  9 01:00:20 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:21.013, Tesla V100-SXM2-32GB, 7165 MiB, 32768 MiB, 95 %, 213.03 W
+Tue Jun  9 01:00:22 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:22.047, Tesla V100-SXM2-32GB, 7537 MiB, 32768 MiB, 95 %, 188.86 W
+Tue Jun  9 01:00:23 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:23.069, Tesla V100-SXM2-32GB, 7921 MiB, 32768 MiB, 96 %, 130.85 W
+Tue Jun  9 01:00:24 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:24.099, Tesla V100-SXM2-32GB, 8317 MiB, 32768 MiB, 97 %, 199.00 W
+Tue Jun  9 01:00:25 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:25.117, Tesla V100-SXM2-32GB, 8737 MiB, 32768 MiB, 77 %, 232.26 W
+Tue Jun  9 01:00:26 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:26.149, Tesla V100-SXM2-32GB, 9181 MiB, 32768 MiB, 8 %, 237.29 W
+Tue Jun  9 01:00:27 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:27.182, Tesla V100-SXM2-32GB, 9181 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:00:28 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:28.214, Tesla V100-SXM2-32GB, 9631 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:00:29 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:29.245, Tesla V100-SXM2-32GB, 10117 MiB, 32768 MiB, 10 %, 70.27 W
+Tue Jun  9 01:00:30 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:30.278, Tesla V100-SXM2-32GB, 10639 MiB, 32768 MiB, 97 %, 214.01 W
+Tue Jun  9 01:00:31 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:31.314, Tesla V100-SXM2-32GB, 11203 MiB, 32768 MiB, 8 %, 279.56 W
+Tue Jun  9 01:00:32 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:32.338, Tesla V100-SXM2-32GB, 11203 MiB, 32768 MiB, 8 %, 68.80 W
+Tue Jun  9 01:00:33 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:33.371, Tesla V100-SXM2-32GB, 11827 MiB, 32768 MiB, 96 %, 221.67 W
+Tue Jun  9 01:00:34 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:34.404, Tesla V100-SXM2-32GB, 11827 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:00:35 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:35.430, Tesla V100-SXM2-32GB, 12529 MiB, 32768 MiB, 98 %, 229.97 W
+Tue Jun  9 01:00:36 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:36.463, Tesla V100-SXM2-32GB, 12529 MiB, 32768 MiB, 8 %, 68.80 W
+Tue Jun  9 01:00:37 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:37.486, Tesla V100-SXM2-32GB, 13387 MiB, 32768 MiB, 97 %, 228.17 W
+Tue Jun  9 01:00:38 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:38.518, Tesla V100-SXM2-32GB, 13387 MiB, 32768 MiB, 36 %, 68.31 W
+Tue Jun  9 01:00:39 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:39.538, Tesla V100-SXM2-32GB, 13387 MiB, 32768 MiB, 8 %, 68.31 W
+Tue Jun  9 01:00:40 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:40.573, Tesla V100-SXM2-32GB, 18359 MiB, 32768 MiB, 99 %, 240.22 W
+Tue Jun  9 01:00:41 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:41.605, Tesla V100-SXM2-32GB, 18359 MiB, 32768 MiB, 97 %, 237.29 W
+Tue Jun  9 01:00:42 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:42.629, Tesla V100-SXM2-32GB, 18359 MiB, 32768 MiB, 25 %, 70.27 W
+Tue Jun  9 01:00:43 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:43.662, Tesla V100-SXM2-32GB, 18359 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:00:44 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:44.684, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 84 %, 69.78 W
+Tue Jun  9 01:00:45 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:45.718, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 69.78 W
+Tue Jun  9 01:00:46 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:46.750, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 69.29 W
+Tue Jun  9 01:00:47 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:47.800, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 42.34 W
+Tue Jun  9 01:00:48 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:48.833, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.85 W
+Tue Jun  9 01:00:49 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:49.869, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.85 W
+Tue Jun  9 01:00:50 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:50.914, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:00:51 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:51.948, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:00:52 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:52.970, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.38 W
+Tue Jun  9 01:00:53 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:54.004, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:00:55 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:55.026, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:00:56 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:56.059, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:00:57 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:57.106, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:00:58 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:58.139, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:00:59 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:00:59.172, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:01:00 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:00.192, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.38 W
+Tue Jun  9 01:01:01 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:01.221, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:01:02 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:02.244, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:01:03 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:03.265, Tesla V100-SXM2-32GB, 3 MiB, 32768 MiB, 0 %, 41.38 W
+Tue Jun  9 01:01:04 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:04.298, Tesla V100-SXM2-32GB, 3 MiB, 32768 MiB, 0 %, 41.38 W
+Tue Jun  9 01:01:05 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:05.320, Tesla V100-SXM2-32GB, 3 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:01:06 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:06.353, Tesla V100-SXM2-32GB, 703 MiB, 32768 MiB, 17 %, 56.57 W
+Tue Jun  9 01:01:07 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:07.370, Tesla V100-SXM2-32GB, 1267 MiB, 32768 MiB, 16 %, 57.06 W
+Tue Jun  9 01:01:08 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:08.403, Tesla V100-SXM2-32GB, 1827 MiB, 32768 MiB, 36 %, 56.57 W
+Tue Jun  9 01:01:09 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:09.421, Tesla V100-SXM2-32GB, 2135 MiB, 32768 MiB, 27 %, 70.76 W
+Tue Jun  9 01:01:10 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:10.454, Tesla V100-SXM2-32GB, 2267 MiB, 32768 MiB, 35 %, 69.29 W
+Tue Jun  9 01:01:11 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:11.488, Tesla V100-SXM2-32GB, 2405 MiB, 32768 MiB, 8 %, 99.64 W
+Tue Jun  9 01:01:12 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:12.509, Tesla V100-SXM2-32GB, 2555 MiB, 32768 MiB, 51 %, 69.78 W
+Tue Jun  9 01:01:13 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:13.541, Tesla V100-SXM2-32GB, 2891 MiB, 32768 MiB, 24 %, 233.20 W
+Tue Jun  9 01:01:14 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:14.564, Tesla V100-SXM2-32GB, 3071 MiB, 32768 MiB, 40 %, 205.35 W
+Tue Jun  9 01:01:15 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:15.596, Tesla V100-SXM2-32GB, 3263 MiB, 32768 MiB, 40 %, 167.24 W
+Tue Jun  9 01:01:16 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:16.628, Tesla V100-SXM2-32GB, 3467 MiB, 32768 MiB, 15 %, 207.31 W
+Tue Jun  9 01:01:17 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:17.663, Tesla V100-SXM2-32GB, 3683 MiB, 32768 MiB, 8 %, 157.18 W
+Tue Jun  9 01:01:18 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:18.697, Tesla V100-SXM2-32GB, 3911 MiB, 32768 MiB, 34 %, 67.82 W
+Tue Jun  9 01:01:19 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:19.729, Tesla V100-SXM2-32GB, 4403 MiB, 32768 MiB, 80 %, 73.71 W
+Tue Jun  9 01:01:20 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:20.761, Tesla V100-SXM2-32GB, 4403 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:21 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:21.793, Tesla V100-SXM2-32GB, 4939 MiB, 32768 MiB, 85 %, 70.76 W
+Tue Jun  9 01:01:22 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:22.814, Tesla V100-SXM2-32GB, 5221 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:23 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:23.847, Tesla V100-SXM2-32GB, 5515 MiB, 32768 MiB, 8 %, 235.98 W
+Tue Jun  9 01:01:24 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:24.870, Tesla V100-SXM2-32GB, 5821 MiB, 32768 MiB, 89 %, 72.24 W
+Tue Jun  9 01:01:25 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:25.900, Tesla V100-SXM2-32GB, 6139 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:26 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:26.934, Tesla V100-SXM2-32GB, 6469 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:27 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:27.969, Tesla V100-SXM2-32GB, 6811 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:28 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:29.001, Tesla V100-SXM2-32GB, 7165 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:30 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:30.033, Tesla V100-SXM2-32GB, 7537 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:31 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:31.066, Tesla V100-SXM2-32GB, 7921 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:32 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:32.105, Tesla V100-SXM2-32GB, 8317 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:33 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:33.129, Tesla V100-SXM2-32GB, 8737 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:34 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:34.161, Tesla V100-SXM2-32GB, 9181 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:35 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:35.184, Tesla V100-SXM2-32GB, 9631 MiB, 32768 MiB, 87 %, 70.27 W
+Tue Jun  9 01:01:36 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:36.217, Tesla V100-SXM2-32GB, 10117 MiB, 32768 MiB, 97 %, 234.85 W
+Tue Jun  9 01:01:37 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:37.239, Tesla V100-SXM2-32GB, 10117 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:38 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:38.268, Tesla V100-SXM2-32GB, 10639 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:39 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:39.301, Tesla V100-SXM2-32GB, 11203 MiB, 32768 MiB, 93 %, 167.35 W
+Tue Jun  9 01:01:40 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:40.322, Tesla V100-SXM2-32GB, 11827 MiB, 32768 MiB, 8 %, 289.91 W
+Tue Jun  9 01:01:41 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:41.354, Tesla V100-SXM2-32GB, 11827 MiB, 32768 MiB, 27 %, 70.27 W
+Tue Jun  9 01:01:42 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:42.377, Tesla V100-SXM2-32GB, 12529 MiB, 32768 MiB, 8 %, 237.93 W
+Tue Jun  9 01:01:43 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:43.410, Tesla V100-SXM2-32GB, 12529 MiB, 32768 MiB, 29 %, 79.05 W
+Tue Jun  9 01:01:44 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:44.445, Tesla V100-SXM2-32GB, 12529 MiB, 32768 MiB, 8 %, 68.80 W
+Tue Jun  9 01:01:45 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:45.476, Tesla V100-SXM2-32GB, 13387 MiB, 32768 MiB, 95 %, 227.53 W
+Tue Jun  9 01:01:46 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:46.505, Tesla V100-SXM2-32GB, 13387 MiB, 32768 MiB, 8 %, 68.80 W
+Tue Jun  9 01:01:47 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:47.537, Tesla V100-SXM2-32GB, 18359 MiB, 32768 MiB, 99 %, 249.81 W
+Tue Jun  9 01:01:48 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:48.569, Tesla V100-SXM2-32GB, 18359 MiB, 32768 MiB, 99 %, 240.22 W
+Tue Jun  9 01:01:49 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:49.601, Tesla V100-SXM2-32GB, 18359 MiB, 32768 MiB, 92 %, 189.71 W
+Tue Jun  9 01:01:50 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:50.649, Tesla V100-SXM2-32GB, 18359 MiB, 32768 MiB, 8 %, 69.78 W
+Tue Jun  9 01:01:51 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:51.694, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 31 %, 73.71 W
+Tue Jun  9 01:01:52 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:52.717, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 69.78 W
+Tue Jun  9 01:01:53 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:53.751, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 69.78 W
+Tue Jun  9 01:01:54 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:54.775, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 69.29 W
+Tue Jun  9 01:01:55 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:55.810, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 42.37 W
+Tue Jun  9 01:01:56 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:56.846, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.85 W
+Tue Jun  9 01:01:57 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:57.878, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:01:58 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:58.912, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:01:59 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:01:59.947, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.38 W
+Tue Jun  9 01:02:00 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:02:00.979, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.38 W
+Tue Jun  9 01:02:01 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:02:02.014, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:02:03 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:02:03.038, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:02:04 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:02:04.072, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:02:05 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:02:05.095, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:02:06 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:02:06.128, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.38 W
+Tue Jun  9 01:02:07 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:02:07.148, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:02:08 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:02:08.165, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W
+Tue Jun  9 01:02:09 CST 2026
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W]
+2026/06/09 01:02:09.198, Tesla V100-SXM2-32GB, 0 MiB, 32768 MiB, 0 %, 41.36 W

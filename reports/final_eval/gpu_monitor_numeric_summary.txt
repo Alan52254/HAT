@@ -1,0 +1,8 @@
+# GPU Monitor Summary
+samples=130
+peak_mem_MiB=18359.0
+avg_mem_MiB=5354.08
+peak_util_percent=99.0
+avg_util_percent=25.58
+peak_power_W=289.91
+avg_power_W=98.60

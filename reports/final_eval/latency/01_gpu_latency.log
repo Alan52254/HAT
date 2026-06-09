@@ -1,0 +1,633 @@
+| Configs: Namespace(activation_dropout=0.0, activation_fn='relu', adam_betas='(0.9, 0.98)', adam_eps=1e-08, adaptive_input=False, adaptive_softmax_cutoff=None, adaptive_softmax_dropout=0, arch='transformersuper_iwslt_de_en', attention_dropout=0.0, beam=5, best_checkpoint_metric='loss', bucket_cap_mb=25, clip_norm=25, configs='configs/iwslt14.de-en/subtransformer/HAT_iwslt14deen_titanxp@137.8ms_bleu@34.7.yml', cpu=False, criterion='label_smoothed_cross_entropy', curriculum=0, data='data/binary/iwslt14_de_en', dataset_impl=None, ddp_backend='c10d', decoder_arbitrary_ende_attn_all_subtransformer=[2, -1, -1, -1], decoder_arbitrary_ende_attn_choice=[-1, 1, 2], decoder_attention_heads=4, decoder_embed_choice=[512, 256, 128], decoder_embed_dim=640, decoder_embed_dim_subtransformer=512, decoder_embed_path=None, decoder_ende_attention_heads_all_subtransformer=[4, 4, 4, 4], decoder_ende_attention_heads_choice=[16, 8, 4, 2, 1], decoder_ffn_embed_dim=2048, decoder_ffn_embed_dim_all_subtransformer=[1024, 2048, 2048, 1024], decoder_ffn_embed_dim_choice=[4096, 3072, 2048, 1024], decoder_input_dim=640, decoder_layer_num_choice=[7, 6, 5, 4, 3, 2], decoder_layer_num_subtransformer=4, decoder_layers=6, decoder_learned_pos=False, decoder_normalize_before=False, decoder_output_dim=640, decoder_self_attention_heads_all_subtransformer=[4, 4, 4, 2], decoder_self_attention_heads_choice=[16, 8, 4, 2, 1], device_id=0, disable_validation=False, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_port=-1, distributed_rank=0, distributed_world_size=1, diverse_beam_groups=-1, diverse_beam_strength=0.5, dropout=0.375, encoder_attention_heads=4, encoder_embed_choice=[512, 256, 128], encoder_embed_dim=640, encoder_embed_dim_subtransformer=512, encoder_embed_path=None, encoder_ffn_embed_dim=2048, encoder_ffn_embed_dim_all_subtransformer=[1024, 1024, 1024, 1024, 1024, 1024], encoder_ffn_embed_dim_choice=[4096, 3072, 2048, 1024], encoder_layer_num_choice=[7, 6, 5, 4, 3, 2], encoder_layer_num_subtransformer=6, encoder_layers=6, encoder_learned_pos=False, encoder_normalize_before=False, encoder_self_attention_heads_all_subtransformer=[4, 4, 4, 4, 4, 4], encoder_self_attention_heads_choice=[16, 8, 4, 2, 1], find_unused_parameters=False, fix_batches_to_gpus=False, fp16=False, fp16_init_scale=128, fp16_scale_tolerance=0.0, fp16_scale_window=None, get_attn=False, keep_interval_updates=-1, keep_last_epochs=20, label_smoothing=0.1, latcpu=False, latgpu=True, latiter=300, latsilent=False, lazy_load=False, left_pad_source='True', left_pad_target='False', lenpen=1, log_format=None, log_interval=1000, lr=[0.0005], lr_scheduler='inverse_sqrt', match_source_len=False, max_epoch=0, max_len_a=0, max_len_b=200, max_sentences=None, max_sentences_valid=None, max_source_positions=1024, max_target_positions=1024, max_tokens=4096, max_tokens_valid=4096, max_update=50000, maximize_best_checkpoint_metric=False, memory_efficient_fp16=False, min_len=1, min_loss_scale=0.0001, min_lr=-1, model_overrides='{}', nbest=1, no_beamable_mm=False, no_early_stop=False, no_epoch_checkpoints=False, no_last_checkpoints=False, no_progress_bar=False, no_repeat_ngram_size=0, no_save=False, no_save_optimizer_state=False, no_token_positional_embeddings=False, num_workers=10, optimizer='adam', optimizer_overrides='{}', path=None, pdb=False, prefix_size=0, print_alignment=False, profile_flops=False, profile_latency=False, qkv_dim=512, quiet=False, raw_text=False, remove_bpe=None, replace_unk=None, required_batch_size_multiple=8, reset_dataloader=False, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=False, restore_file='checkpoint_last.pt', results_path=None, sacrebleu=False, sampling=False, sampling_topk=-1, sampling_topp=-1.0, save_dir='checkpoints/iwslt14.de-en/subtransformer/HAT_iwslt14deen_titanxp@137.8ms_bleu@34.7', save_interval=1, save_interval_updates=0, score_reference=False, seed=1, sentence_avg=False, share_all_embeddings=False, share_decoder_input_output_embed=False, skip_invalid_size_inputs_valid_test=False, source_lang='de', sub_configs='configs/iwslt14.de-en/subtransformer/common.yml', target_lang='en', task='translation', tbmf_wrapper=False, temperature=1.0, tensorboard_logdir='checkpoints/iwslt14.de-en/subtransformer/HAT_iwslt14deen_titanxp@137.8ms_bleu@34.7/tensorboard', threshold_loss_scale=None, train_subset='train', train_subtransformer=True, unkpen=0, unnormalized=False, update_freq=[1], upsample_primary=1, use_bmuf=False, user_dir=None, valid_subset='valid', validate_interval=1, validate_subtransformer=False, vocab_original_scaling=False, warmup_init_lr=1e-07, warmup_updates=4000, weight_decay=0.0001)
+| [de] dictionary: 8848 types
+| [en] dictionary: 6632 types
+| loaded 7283 examples from: data/binary/iwslt14_de_en/valid.de-en.de
+| loaded 7283 examples from: data/binary/iwslt14_de_en/valid.de-en.en
+| data/binary/iwslt14_de_en valid de-en 7283 examples
+| Fallback to xavier initializer
+| Model: transformersuper_iwslt_de_en 
+| Criterion: LabelSmoothedCrossEntropyCriterion
+ 
+
+		WARNING!!! Training one single SubTransformer
+
+
+| SubTransformer Arch: {'encoder': {'encoder_embed_dim': 512, 'encoder_layer_num': 6, 'encoder_ffn_embed_dim': [1024, 1024, 1024, 1024, 1024, 1024], 'encoder_self_attention_heads': [4, 4, 4, 4, 4, 4]}, 'decoder': {'decoder_embed_dim': 512, 'decoder_layer_num': 4, 'decoder_ffn_embed_dim': [1024, 2048, 2048, 1024], 'decoder_self_attention_heads': [4, 4, 4, 2], 'decoder_ende_attention_heads': [4, 4, 4, 4], 'decoder_arbitrary_ende_attn': [2, -1, -1, -1]}} 
+
+| SubTransformer size (without embedding weights): 27333632
+| Embedding layer size: 3395584 
+
+| Training on 1 GPUs
+| Max tokens per GPU = 4096 and max sentences per GPU = None 
+
+| Measuring model latency on GPU...
+| Measuring encoder...
+  0%|          | 0/300 [00:00<?, ?it/s]  8%|▊         | 25/300 [00:00<00:01, 240.84it/s] 17%|█▋        | 50/300 [00:00<00:01, 241.15it/s] 25%|██▌       | 75/300 [00:00<00:00, 241.09it/s] 33%|███▎      | 100/300 [00:00<00:00, 240.87it/s] 42%|████▏     | 125/300 [00:00<00:00, 240.76it/s] 50%|█████     | 150/300 [00:00<00:00, 240.70it/s] 58%|█████▊    | 175/300 [00:00<00:00, 240.64it/s]| Encoder one run on GPU:  4.290559768676758
+| Encoder one run on GPU:  4.1154561042785645
+| Encoder one run on GPU:  4.118527889251709
+| Encoder one run on GPU:  4.107264041900635
+| Encoder one run on GPU:  4.134912014007568
+| Encoder one run on GPU:  4.112383842468262
+| Encoder one run on GPU:  4.122623920440674
+| Encoder one run on GPU:  4.108287811279297
+| Encoder one run on GPU:  4.105216026306152
+| Encoder one run on GPU:  4.107264041900635
+| Encoder one run on GPU:  4.098048210144043
+| Encoder one run on GPU:  4.121600151062012
+| Encoder one run on GPU:  4.129792213439941
+| Encoder one run on GPU:  4.131840229034424
+| Encoder one run on GPU:  4.0960001945495605
+| Encoder one run on GPU:  4.077568054199219
+| Encoder one run on GPU:  4.09497594833374
+| Encoder one run on GPU:  4.0960001945495605
+| Encoder one run on GPU:  4.104191780090332
+| Encoder one run on GPU:  4.108287811279297
+| Encoder one run on GPU:  4.09497594833374
+| Encoder one run on GPU:  4.107264041900635
+| Encoder one run on GPU:  4.099071979522705
+| Encoder one run on GPU:  4.124671936035156
+| Encoder one run on GPU:  4.127744197845459
+| Encoder one run on GPU:  4.127744197845459
+| Encoder one run on GPU:  4.109312057495117
+| Encoder one run on GPU:  4.098048210144043
+| Encoder one run on GPU:  4.114431858062744
+| Encoder one run on GPU:  4.1113600730896
+| Encoder one run on GPU:  4.099071979522705
+| Encoder one run on GPU:  4.120575904846191
+| Encoder one run on GPU:  4.125696182250977
+| Encoder one run on GPU:  4.1062397956848145
+| Encoder one run on GPU:  4.09497594833374
+| Encoder one run on GPU:  4.092927932739258
+| Encoder one run on GPU:  4.09497594833374
+| Encoder one run on GPU:  4.107264041900635
+| Encoder one run on GPU:  4.1154561042785645
+| Encoder one run on GPU:  4.090879917144775
+| Encoder one run on GPU:  4.084735870361328
+| Encoder one run on GPU:  4.100096225738525
+| Encoder one run on GPU:  4.100096225738525
+| Encoder one run on GPU:  4.100096225738525
+| Encoder one run on GPU:  4.128767967224121
+| Encoder one run on GPU:  4.10214376449585
+| Encoder one run on GPU:  4.091904163360596
+| Encoder one run on GPU:  4.089856147766113
+| Encoder one run on GPU:  4.097023963928223
+| Encoder one run on GPU:  4.098048210144043
+| Encoder one run on GPU:  4.142079830169678
+| Encoder one run on GPU:  4.10316801071167
+| Encoder one run on GPU:  4.099071979522705
+| Encoder one run on GPU:  4.099071979522705
+| Encoder one run on GPU:  4.099071979522705
+| Encoder one run on GPU:  4.1113600730896
+| Encoder one run on GPU:  4.118527889251709
+| Encoder one run on GPU:  4.1062397956848145
+| Encoder one run on GPU:  4.104191780090332
+| Encoder one run on GPU:  4.119552135467529
+| Encoder one run on GPU:  4.1154561042785645
+| Encoder one run on GPU:  4.1113600730896
+| Encoder one run on GPU:  4.104191780090332
+| Encoder one run on GPU:  4.1011199951171875
+| Encoder one run on GPU:  4.118527889251709
+| Encoder one run on GPU:  4.1656317710876465
+| Encoder one run on GPU:  4.110335826873779
+| Encoder one run on GPU:  4.098048210144043
+| Encoder one run on GPU:  4.0960001945495605
+| Encoder one run on GPU:  4.116479873657227
+| Encoder one run on GPU:  4.112383842468262
+| Encoder one run on GPU:  4.122623920440674
+| Encoder one run on GPU:  4.1062397956848145
+| Encoder one run on GPU:  4.098048210144043
+| Encoder one run on GPU:  4.109312057495117
+| Encoder one run on GPU:  4.164608001708984
+| Encoder one run on GPU:  4.127744197845459
+| Encoder one run on GPU:  4.127744197845459
+| Encoder one run on GPU:  4.125696182250977
+| Encoder one run on GPU:  4.128767967224121
+| Encoder one run on GPU:  4.107264041900635
+| Encoder one run on GPU:  4.114431858062744
+| Encoder one run on GPU:  4.114431858062744
+| Encoder one run on GPU:  4.1308159828186035
+| Encoder one run on GPU:  4.107264041900635
+| Encoder one run on GPU:  4.123648166656494
+| Encoder one run on GPU:  4.117504119873047
+| Encoder one run on GPU:  4.117504119873047
+| Encoder one run on GPU:  4.099071979522705
+| Encoder one run on GPU:  4.110335826873779
+| Encoder one run on GPU:  4.100096225738525
+| Encoder one run on GPU:  4.1062397956848145
+| Encoder one run on GPU:  4.112383842468262
+| Encoder one run on GPU:  4.117504119873047
+| Encoder one run on GPU:  4.105216026306152
+| Encoder one run on GPU:  4.114431858062744
+| Encoder one run on GPU:  4.113408088684082
+| Encoder one run on GPU:  4.110335826873779
+| Encoder one run on GPU:  4.125696182250977
+| Encoder one run on GPU:  4.149248123168945
+| Encoder one run on GPU:  4.1605119705200195
+| Encoder one run on GPU:  4.129792213439941
+| Encoder one run on GPU:  4.119552135467529
+| Encoder one run on GPU:  4.116479873657227
+| Encoder one run on GPU:  4.131840229034424
+| Encoder one run on GPU:  4.1308159828186035
+| Encoder one run on GPU:  4.107264041900635
+| Encoder one run on GPU:  4.108287811279297
+| Encoder one run on GPU:  4.097023963928223
+| Encoder one run on GPU:  4.114431858062744
+| Encoder one run on GPU:  4.113408088684082
+| Encoder one run on GPU:  4.1113600730896
+| Encoder one run on GPU:  4.108287811279297
+| Encoder one run on GPU:  4.126719951629639
+| Encoder one run on GPU:  4.116479873657227
+| Encoder one run on GPU:  4.123648166656494
+| Encoder one run on GPU:  4.132863998413086
+| Encoder one run on GPU:  4.166656017303467
+| Encoder one run on GPU:  4.136960029602051
+| Encoder one run on GPU:  4.107264041900635
+| Encoder one run on GPU:  4.088831901550293
+| Encoder one run on GPU:  4.099071979522705
+| Encoder one run on GPU:  4.110335826873779
+| Encoder one run on GPU:  4.110335826873779
+| Encoder one run on GPU:  4.118527889251709
+| Encoder one run on GPU:  4.1748480796813965
+| Encoder one run on GPU:  4.100096225738525
+| Encoder one run on GPU:  4.105216026306152
+| Encoder one run on GPU:  4.125696182250977
+| Encoder one run on GPU:  4.1062397956848145
+| Encoder one run on GPU:  4.10316801071167
+| Encoder one run on GPU:  4.113408088684082
+| Encoder one run on GPU:  4.1359357833862305
+| Encoder one run on GPU:  4.125696182250977
+| Encoder one run on GPU:  4.092927932739258
+| Encoder one run on GPU:  4.10316801071167
+| Encoder one run on GPU:  4.097023963928223
+| Encoder one run on GPU:  4.112383842468262
+| Encoder one run on GPU:  4.137983798980713
+| Encoder one run on GPU:  4.133887767791748
+| Encoder one run on GPU:  4.128767967224121
+| Encoder one run on GPU:  4.1154561042785645
+| Encoder one run on GPU:  4.097023963928223
+| Encoder one run on GPU:  4.100096225738525
+| Encoder one run on GPU:  4.1011199951171875
+| Encoder one run on GPU:  4.125696182250977
+| Encoder one run on GPU:  4.1011199951171875
+| Encoder one run on GPU:  4.110335826873779
+| Encoder one run on GPU:  4.126719951629639
+| Encoder one run on GPU:  4.136960029602051
+| Encoder one run on GPU:  4.149248123168945
+| Encoder one run on GPU:  4.128767967224121
+| Encoder one run on GPU:  4.1308159828186035
+| Encoder one run on GPU:  4.133887767791748
+| Encoder one run on GPU:  4.128767967224121
+| Encoder one run on GPU:  4.140031814575195
+| Encoder one run on GPU:  4.109312057495117
+| Encoder one run on GPU:  4.124671936035156
+| Encoder one run on GPU:  4.112383842468262
+| Encoder one run on GPU:  4.1062397956848145
+| Encoder one run on GPU:  4.110335826873779
+| Encoder one run on GPU:  4.104191780090332
+| Encoder one run on GPU:  4.1113600730896
+| Encoder one run on GPU:  4.1154561042785645
+| Encoder one run on GPU:  4.1011199951171875
+| Encoder one run on GPU:  4.108287811279297
+| Encoder one run on GPU:  4.120575904846191
+| Encoder one run on GPU:  4.126719951629639
+| Encoder one run on GPU:  4.133887767791748
+| Encoder one run on GPU:  4.129792213439941
+| Encoder one run on GPU:  4.120575904846191
+| Encoder one run on GPU:  4.122623920440674
+| Encoder one run on GPU:  4.110335826873779
+| Encoder one run on GPU:  4.110335826873779
+| Encoder one run on GPU:  4.119552135467529
+| Encoder one run on GPU:  4.154367923736572
+| Encoder one run on GPU:  4.114431858062744
+| Encoder one run on GPU:  4.1011199951171875
+| Encoder one run on GPU:  4.107264041900635
+| Encoder one run on GPU:  4.107264041900635
+| Encoder one run on GPU:  4.10316801071167
+| Encoder one run on GPU:  4.117504119873047 67%|██████▋   | 200/300 [00:00<00:00, 240.66it/s] 75%|███████▌  | 225/300 [00:00<00:00, 240.54it/s] 83%|████████▎ | 250/300 [00:01<00:00, 240.69it/s] 92%|█████████▏| 275/300 [00:01<00:00, 240.77it/s]100%|██████████| 300/300 [00:01<00:00, 240.82it/s]100%|██████████| 300/300 [00:01<00:00, 240.74it/s]
+| Encoder one run on GPU:  4.136960029602051
+| Encoder one run on GPU:  4.129792213439941
+| Encoder one run on GPU:  4.113408088684082
+| Encoder one run on GPU:  4.116479873657227
+| Encoder one run on GPU:  4.10316801071167
+| Encoder one run on GPU:  4.10214376449585
+| Encoder one run on GPU:  4.109312057495117
+| Encoder one run on GPU:  4.1062397956848145
+| Encoder one run on GPU:  4.117504119873047
+| Encoder one run on GPU:  4.10316801071167
+| Encoder one run on GPU:  4.09497594833374
+| Encoder one run on GPU:  4.125696182250977
+| Encoder one run on GPU:  4.119552135467529
+| Encoder one run on GPU:  4.100096225738525
+| Encoder one run on GPU:  4.126719951629639
+| Encoder one run on GPU:  4.140031814575195
+| Encoder one run on GPU:  4.107264041900635
+| Encoder one run on GPU:  4.128767967224121
+| Encoder one run on GPU:  4.122623920440674
+| Encoder one run on GPU:  4.108287811279297
+| Encoder one run on GPU:  4.1308159828186035
+| Encoder one run on GPU:  4.131840229034424
+| Encoder one run on GPU:  4.113408088684082
+| Encoder one run on GPU:  4.142079830169678
+| Encoder one run on GPU:  4.126719951629639
+| Encoder one run on GPU:  4.1113600730896
+| Encoder one run on GPU:  4.113408088684082
+| Encoder one run on GPU:  4.146175861358643
+| Encoder one run on GPU:  4.117504119873047
+| Encoder one run on GPU:  4.128767967224121
+| Encoder one run on GPU:  4.0960001945495605
+| Encoder one run on GPU:  4.1113600730896
+| Encoder one run on GPU:  4.124671936035156
+| Encoder one run on GPU:  4.1062397956848145
+| Encoder one run on GPU:  4.147200107574463
+| Encoder one run on GPU:  4.189184188842773
+| Encoder one run on GPU:  4.108287811279297
+| Encoder one run on GPU:  4.119552135467529
+| Encoder one run on GPU:  4.09497594833374
+| Encoder one run on GPU:  4.093952178955078
+| Encoder one run on GPU:  4.0960001945495605
+| Encoder one run on GPU:  4.099071979522705
+| Encoder one run on GPU:  4.123648166656494
+| Encoder one run on GPU:  4.225024223327637
+| Encoder one run on GPU:  4.110335826873779
+| Encoder one run on GPU:  4.104191780090332
+| Encoder one run on GPU:  4.093952178955078
+| Encoder one run on GPU:  4.1062397956848145
+| Encoder one run on GPU:  4.10316801071167
+| Encoder one run on GPU:  4.098048210144043
+| Encoder one run on GPU:  4.097023963928223
+| Encoder one run on GPU:  4.117504119873047
+| Encoder one run on GPU:  4.099071979522705
+| Encoder one run on GPU:  4.079616069793701
+| Encoder one run on GPU:  4.087808132171631
+| Encoder one run on GPU:  4.10316801071167
+| Encoder one run on GPU:  4.110335826873779
+| Encoder one run on GPU:  4.10214376449585
+| Encoder one run on GPU:  4.141056060791016
+| Encoder one run on GPU:  4.099071979522705
+| Encoder one run on GPU:  4.113408088684082
+| Encoder one run on GPU:  4.123648166656494
+| Encoder one run on GPU:  4.129792213439941
+| Encoder one run on GPU:  4.116479873657227
+| Encoder one run on GPU:  4.09497594833374
+| Encoder one run on GPU:  4.093952178955078
+| Encoder one run on GPU:  4.093952178955078
+| Encoder one run on GPU:  4.097023963928223
+| Encoder one run on GPU:  4.147200107574463
+| Encoder one run on GPU:  4.127744197845459
+| Encoder one run on GPU:  4.125696182250977
+| Encoder one run on GPU:  4.10214376449585
+| Encoder one run on GPU:  4.1062397956848145
+| Encoder one run on GPU:  4.099071979522705
+| Encoder one run on GPU:  4.090879917144775
+| Encoder one run on GPU:  4.125696182250977
+| Encoder one run on GPU:  4.097023963928223
+| Encoder one run on GPU:  4.1062397956848145
+| Encoder one run on GPU:  4.110335826873779
+| Encoder one run on GPU:  4.092927932739258
+| Encoder one run on GPU:  4.1011199951171875
+| Encoder one run on GPU:  4.1656317710876465
+| Encoder one run on GPU:  4.1062397956848145
+| Encoder one run on GPU:  4.0960001945495605
+| Encoder one run on GPU:  4.108287811279297
+| Encoder one run on GPU:  4.123648166656494
+| Encoder one run on GPU:  4.139008045196533
+| Encoder one run on GPU:  4.1113600730896
+| Encoder one run on GPU:  4.128767967224121
+| Encoder one run on GPU:  4.1113600730896
+| Encoder one run on GPU:  4.090879917144775
+| Encoder one run on GPU:  4.104191780090332
+| Encoder one run on GPU:  4.0960001945495605
+| Encoder one run on GPU:  4.177919864654541
+| Encoder one run on GPU:  4.1451520919799805
+| Encoder one run on GPU:  4.109312057495117
+| Encoder one run on GPU:  4.100096225738525
+| Encoder one run on GPU:  4.085760116577148
+| Encoder one run on GPU:  4.090879917144775
+| Encoder one run on GPU:  4.137983798980713
+| Encoder one run on GPU:  4.098048210144043
+| Encoder one run on GPU:  4.113408088684082
+| Encoder one run on GPU:  4.109312057495117
+| Encoder one run on GPU:  4.100096225738525
+| Encoder one run on GPU:  4.09497594833374
+| Encoder one run on GPU:  4.09497594833374
+| Encoder one run on GPU:  4.1011199951171875
+| Encoder one run on GPU:  4.09497594833374
+| Encoder one run on GPU:  4.129792213439941
+| Encoder one run on GPU:  4.123648166656494
+| Encoder one run on GPU:  4.110335826873779
+| Encoder one run on GPU:  4.10316801071167
+| Encoder one run on GPU:  4.10316801071167
+| Encoder one run on GPU:  4.104191780090332
+| Encoder one run on GPU:  4.1113600730896
+| Encoder one run on GPU:  4.099071979522705
+| Encoder one run on GPU:  4.121600151062012
+| Encoder one run on GPU:  4.121600151062012
+| Encoder latencies: [4.290559768676758, 4.1154561042785645, 4.118527889251709, 4.107264041900635, 4.134912014007568, 4.112383842468262, 4.122623920440674, 4.108287811279297, 4.105216026306152, 4.107264041900635, 4.098048210144043, 4.121600151062012, 4.129792213439941, 4.131840229034424, 4.0960001945495605, 4.077568054199219, 4.09497594833374, 4.0960001945495605, 4.104191780090332, 4.108287811279297, 4.09497594833374, 4.107264041900635, 4.099071979522705, 4.124671936035156, 4.127744197845459, 4.127744197845459, 4.109312057495117, 4.098048210144043, 4.114431858062744, 4.1113600730896, 4.099071979522705, 4.120575904846191, 4.125696182250977, 4.1062397956848145, 4.09497594833374, 4.092927932739258, 4.09497594833374, 4.107264041900635, 4.1154561042785645, 4.090879917144775, 4.084735870361328, 4.100096225738525, 4.100096225738525, 4.100096225738525, 4.128767967224121, 4.10214376449585, 4.091904163360596, 4.089856147766113, 4.097023963928223, 4.098048210144043, 4.142079830169678, 4.10316801071167, 4.099071979522705, 4.099071979522705, 4.099071979522705, 4.1113600730896, 4.118527889251709, 4.1062397956848145, 4.104191780090332, 4.119552135467529, 4.1154561042785645, 4.1113600730896, 4.104191780090332, 4.1011199951171875, 4.118527889251709, 4.1656317710876465, 4.110335826873779, 4.098048210144043, 4.0960001945495605, 4.116479873657227, 4.112383842468262, 4.122623920440674, 4.1062397956848145, 4.098048210144043, 4.109312057495117, 4.164608001708984, 4.127744197845459, 4.127744197845459, 4.125696182250977, 4.128767967224121, 4.107264041900635, 4.114431858062744, 4.114431858062744, 4.1308159828186035, 4.107264041900635, 4.123648166656494, 4.117504119873047, 4.117504119873047, 4.099071979522705, 4.110335826873779, 4.100096225738525, 4.1062397956848145, 4.112383842468262, 4.117504119873047, 4.105216026306152, 4.114431858062744, 4.113408088684082, 4.110335826873779, 4.125696182250977, 4.149248123168945, 4.1605119705200195, 4.129792213439941, 4.119552135467529, 4.116479873657227, 4.131840229034424, 4.1308159828186035, 4.107264041900635, 4.108287811279297, 4.097023963928223, 4.114431858062744, 4.113408088684082, 4.1113600730896, 4.108287811279297, 4.126719951629639, 4.116479873657227, 4.123648166656494, 4.132863998413086, 4.166656017303467, 4.136960029602051, 4.107264041900635, 4.088831901550293, 4.099071979522705, 4.110335826873779, 4.110335826873779, 4.118527889251709, 4.1748480796813965, 4.100096225738525, 4.105216026306152, 4.125696182250977, 4.1062397956848145, 4.10316801071167, 4.113408088684082, 4.1359357833862305, 4.125696182250977, 4.092927932739258, 4.10316801071167, 4.097023963928223, 4.112383842468262, 4.137983798980713, 4.133887767791748, 4.128767967224121, 4.1154561042785645, 4.097023963928223, 4.100096225738525, 4.1011199951171875, 4.125696182250977, 4.1011199951171875, 4.110335826873779, 4.126719951629639, 4.136960029602051, 4.149248123168945, 4.128767967224121, 4.1308159828186035, 4.133887767791748, 4.128767967224121, 4.140031814575195, 4.109312057495117, 4.124671936035156, 4.112383842468262, 4.1062397956848145, 4.110335826873779, 4.104191780090332, 4.1113600730896, 4.1154561042785645, 4.1011199951171875, 4.108287811279297, 4.120575904846191, 4.126719951629639, 4.133887767791748, 4.129792213439941, 4.120575904846191, 4.122623920440674, 4.110335826873779, 4.110335826873779, 4.119552135467529, 4.154367923736572, 4.114431858062744, 4.1011199951171875, 4.107264041900635, 4.107264041900635, 4.10316801071167, 4.117504119873047, 4.136960029602051, 4.129792213439941, 4.113408088684082, 4.116479873657227, 4.10316801071167, 4.10214376449585, 4.109312057495117, 4.1062397956848145, 4.117504119873047, 4.10316801071167, 4.09497594833374, 4.125696182250977, 4.119552135467529, 4.100096225738525, 4.126719951629639, 4.140031814575195, 4.107264041900635, 4.128767967224121, 4.122623920440674, 4.108287811279297, 4.1308159828186035, 4.131840229034424, 4.113408088684082, 4.142079830169678, 4.126719951629639, 4.1113600730896, 4.113408088684082, 4.146175861358643, 4.117504119873047, 4.128767967224121, 4.0960001945495605, 4.1113600730896, 4.124671936035156, 4.1062397956848145, 4.147200107574463, 4.189184188842773, 4.108287811279297, 4.119552135467529, 4.09497594833374, 4.093952178955078, 4.0960001945495605, 4.099071979522705, 4.123648166656494, 4.225024223327637, 4.110335826873779, 4.104191780090332, 4.093952178955078, 4.1062397956848145, 4.10316801071167, 4.098048210144043, 4.097023963928223, 4.117504119873047, 4.099071979522705, 4.079616069793701, 4.087808132171631, 4.10316801071167, 4.110335826873779, 4.10214376449585, 4.141056060791016, 4.099071979522705, 4.113408088684082, 4.123648166656494, 4.129792213439941, 4.116479873657227, 4.09497594833374, 4.093952178955078, 4.093952178955078, 4.097023963928223, 4.147200107574463, 4.127744197845459, 4.125696182250977, 4.10214376449585, 4.1062397956848145, 4.099071979522705, 4.090879917144775, 4.125696182250977, 4.097023963928223, 4.1062397956848145, 4.110335826873779, 4.092927932739258, 4.1011199951171875, 4.1656317710876465, 4.1062397956848145, 4.0960001945495605, 4.108287811279297, 4.123648166656494, 4.139008045196533, 4.1113600730896, 4.128767967224121, 4.1113600730896, 4.090879917144775, 4.104191780090332, 4.0960001945495605, 4.177919864654541, 4.1451520919799805, 4.109312057495117, 4.100096225738525, 4.085760116577148, 4.090879917144775, 4.137983798980713, 4.098048210144043, 4.113408088684082, 4.109312057495117, 4.100096225738525, 4.09497594833374, 4.09497594833374, 4.1011199951171875, 4.09497594833374, 4.129792213439941, 4.123648166656494, 4.110335826873779, 4.10316801071167, 4.10316801071167, 4.104191780090332, 4.1113600730896, 4.099071979522705, 4.121600151062012, 4.121600151062012]
+
+| Encoder latency: Mean: 4.1123242715994515 ms; 	 Std: 0.010582696492150337 ms
+| Measuring decoder...
+  0%|          | 0/300 [00:00<?, ?it/s]  1%|          | 2/300 [00:00<00:26, 11.43it/s]  1%|▏         | 4/300 [00:00<00:25, 11.58it/s]  2%|▏         | 6/300 [00:00<00:25, 11.73it/s]  3%|▎         | 8/300 [00:00<00:24, 11.82it/s]  3%|▎         | 10/300 [00:00<00:24, 11.84it/s]  4%|▍         | 12/300 [00:01<00:24, 11.84it/s]  5%|▍         | 14/300 [00:01<00:24, 11.84it/s]  5%|▌         | 16/300 [00:01<00:24, 11.81it/s]  6%|▌         | 18/300 [00:01<00:23, 11.83it/s]  7%|▋         | 20/300 [00:01<00:23, 11.87it/s]  7%|▋         | 22/300 [00:01<00:23, 11.91it/s]  8%|▊         | 24/300 [00:02<00:23, 11.87it/s]  9%|▊         | 26/300 [00:02<00:23, 11.81it/s]  9%|▉         | 28/300 [00:02<00:23, 11.75it/s] 10%|█         | 30/300 [00:02<00:22, 11.74it/s] 11%|█         | 32/300 [00:02<00:22, 11.81it/s] 11%|█▏        | 34/300 [00:02<00:22, 11.81it/s] 12%|█▏        | 36/300 [00:03<00:22, 11.72it/s] 13%|█▎        | 38/300 [00:03<00:22, 11.64it/s] 13%|█▎        | 40/300 [00:03<00:22, 11.56it/s] 14%|█▍        | 42/300 [00:03<00:22, 11.50it/s] 15%|█▍        | 44/300 [00:03<00:22, 11.56it/s] 15%|█▌        | 46/300 [00:03<00:21, 11.56it/s] 16%|█▌        | 48/300 [00:04<00:21, 11.54it/s] 17%|█▋        | 50/300 [00:04<00:21, 11.54it/s] 17%|█▋        | 52/300 [00:04<00:21, 11.62it/s] 18%|█▊        | 54/300 [00:04<00:20, 11.74it/s] 19%|█▊        | 56/300 [00:04<00:20, 11.79it/s] 19%|█▉        | 58/300 [00:04<00:20, 11.78it/s] 20%|██        | 60/300 [00:05<00:20, 11.81it/s] 21%|██        | 62/300 [00:05<00:20, 11.82it/s] 21%|██▏       | 64/300 [00:05<00:19, 11.84it/s] 22%|██▏       | 66/300 [00:05<00:20, 11.36it/s] 23%|██▎       | 68/300 [00:05<00:20, 11.54it/s] 23%|██▎       | 70/300 [00:05<00:19, 11.62it/s] 24%|██▍       | 72/300 [00:06<00:19, 11.70it/s] 25%|██▍       | 74/300 [00:06<00:19, 11.74it/s] 25%|██▌       | 76/300 [00:06<00:19, 11.76it/s] 26%|██▌       | 78/300 [00:06<00:18, 11.77it/s] 27%|██▋       | 80/300 [00:06<00:18, 11.80it/s] 27%|██▋       | 82/300 [00:06<00:18, 11.83it/s] 28%|██▊       | 84/300 [00:07<00:18, 11.85it/s] 29%|██▊       | 86/300 [00:07<00:18, 11.88it/s] 29%|██▉       | 88/300 [00:07<00:17, 11.96it/s] 30%|███       | 90/300 [00:07<00:17, 11.97it/s] 31%|███       | 92/300 [00:07<00:17, 11.96it/s] 31%|███▏      | 94/300 [00:07<00:17, 11.96it/s] 32%|███▏      | 96/300 [00:08<00:16, 12.02it/s] 33%|███▎      | 98/300 [00:08<00:16, 12.00it/s] 33%|███▎      | 100/300 [00:08<00:16, 11.95it/s] 34%|███▍      | 102/300 [00:08<00:16, 11.89it/s] 35%|███▍      | 104/300 [00:08<00:16, 11.87it/s] 35%|███▌      | 106/300 [00:09<00:16, 11.84it/s] 36%|███▌      | 108/300 [00:09<00:16, 11.82it/s] 37%|███▋      | 110/300 [00:09<00:16, 11.83it/s] 37%|███▋      | 112/300 [00:09<00:15, 11.78it/s] 38%|███▊      | 114/300 [00:09<00:15, 11.74it/s] 39%|███▊      | 116/300 [00:09<00:15, 11.76it/s] 39%|███▉      | 118/300 [00:10<00:15, 11.79it/s] 40%|████      | 120/300 [00:10<00:15, 11.82it/s] 41%|████      | 122/300 [00:10<00:15, 11.87it/s] 41%|████▏     | 124/300 [00:10<00:14, 11.95it/s] 42%|████▏     | 126/300 [00:10<00:14, 11.99it/s] 43%|████▎     | 128/300 [00:10<00:14, 12.02it/s] 43%|████▎     | 130/300 [00:11<00:14, 12.03it/s] 44%|████▍     | 132/300 [00:11<00:14, 11.98it/s] 45%|████▍     | 134/300 [00:11<00:13, 11.94it/s] 45%|████▌     | 136/300 [00:11<00:13, 11.92it/s] 46%|████▌     | 138/300 [00:11<00:13, 11.89it/s] 47%|████▋     | 140/300 [00:11<00:13, 11.91it/s] 47%|████▋     | 142/300 [00:12<00:13, 11.99it/s] 48%|████▊     | 144/300 [00:12<00:13, 12.00it/s] 49%|████▊     | 146/300 [00:12<00:12, 11.98it/s] 49%|████▉     | 148/300 [00:12<00:12, 11.95it/s] 50%|█████     | 150/300 [00:12<00:12, 11.82it/s] 51%|█████     | 152/300 [00:12<00:12, 11.81it/s] 51%|█████▏    | 154/300 [00:13<00:12, 11.81it/s] 52%|█████▏    | 156/300 [00:13<00:12, 11.86it/s] 53%|█████▎    | 158/300 [00:13<00:11, 11.84it/s] 53%|█████▎    | 160/300 [00:13<00:11, 11.84it/s] 54%|█████▍    | 162/300 [00:13<00:11, 11.81it/s] 55%|█████▍    | 164/300 [00:13<00:11, 11.59it/s] 55%|█████▌    | 166/300 [00:14<00:11, 11.48it/s] 56%|█████▌    | 168/300 [00:14<00:11, 11.58it/s] 57%|█████▋    | 170/300 [00:14<00:11, 11.71it/s] 57%|█████▋    | 172/300 [00:14<00:10, 11.80it/s] 58%|█████▊    | 174/300 [00:14<00:10, 11.83it/s] 59%|█████▊    | 176/300 [00:14<00:10, 11.79it/s] 59%|█████▉    | 178/300 [00:15<00:10, 11.78it/s] 60%|██████    | 180/300 [00:15<00:10, 11.78it/s] 61%|██████    | 182/300 [00:15<00:09, 11.87it/s]| Decoder one run on GPU:  88.47462463378906
+| Decoder one run on GPU:  86.39078521728516
+| Decoder one run on GPU:  86.59661102294922
+| Decoder one run on GPU:  84.32844543457031
+| Decoder one run on GPU:  84.26290893554688
+| Decoder one run on GPU:  83.39353942871094
+| Decoder one run on GPU:  83.59423828125
+| Decoder one run on GPU:  83.50822448730469
+| Decoder one run on GPU:  84.1164779663086
+| Decoder one run on GPU:  83.94854736328125
+| Decoder one run on GPU:  84.2823715209961
+| Decoder one run on GPU:  84.23014068603516
+| Decoder one run on GPU:  84.4738540649414
+| Decoder one run on GPU:  84.4922866821289
+| Decoder one run on GPU:  84.88550567626953
+| Decoder one run on GPU:  85.14559936523438
+| Decoder one run on GPU:  84.95410919189453
+| Decoder one run on GPU:  83.28396606445312
+| Decoder one run on GPU:  83.525634765625
+| Decoder one run on GPU:  83.22354888916016
+| Decoder one run on GPU:  82.78937530517578
+| Decoder one run on GPU:  83.70995330810547
+| Decoder one run on GPU:  84.4933090209961
+| Decoder one run on GPU:  85.11078643798828
+| Decoder one run on GPU:  85.38521575927734
+| Decoder one run on GPU:  85.54803466796875
+| Decoder one run on GPU:  85.9678726196289
+| Decoder one run on GPU:  86.12044525146484
+| Decoder one run on GPU:  85.58489227294922
+| Decoder one run on GPU:  84.53836822509766
+| Decoder one run on GPU:  84.15129852294922
+| Decoder one run on GPU:  82.59174346923828
+| Decoder one run on GPU:  84.2393569946289
+| Decoder one run on GPU:  84.98687744140625
+| Decoder one run on GPU:  86.59967803955078
+| Decoder one run on GPU:  86.71539306640625
+| Decoder one run on GPU:  87.2775650024414
+| Decoder one run on GPU:  87.15776062011719
+| Decoder one run on GPU:  87.94111633300781
+| Decoder one run on GPU:  87.53561401367188
+| Decoder one run on GPU:  88.33126068115234
+| Decoder one run on GPU:  87.54483032226562
+| Decoder one run on GPU:  86.70719909667969
+| Decoder one run on GPU:  83.66694641113281
+| Decoder one run on GPU:  86.21158599853516
+| Decoder one run on GPU:  86.48499298095703
+| Decoder one run on GPU:  86.75225830078125
+| Decoder one run on GPU:  86.91404724121094
+| Decoder one run on GPU:  86.53311920166016
+| Decoder one run on GPU:  86.79730987548828
+| Decoder one run on GPU:  85.3944320678711
+| Decoder one run on GPU:  83.58604431152344
+| Decoder one run on GPU:  83.29933166503906
+| Decoder one run on GPU:  82.5374755859375
+| Decoder one run on GPU:  83.74578857421875
+| Decoder one run on GPU:  84.04684448242188
+| Decoder one run on GPU:  84.6960678100586
+| Decoder one run on GPU:  85.18553924560547
+| Decoder one run on GPU:  83.97209930419922
+| Decoder one run on GPU:  83.90962982177734
+| Decoder one run on GPU:  84.0232925415039
+| Decoder one run on GPU:  84.64998626708984
+| Decoder one run on GPU:  84.1533432006836
+| Decoder one run on GPU:  83.82361602783203
+| Decoder one run on GPU:  84.3878402709961
+| Decoder one run on GPU:  108.15795135498047
+| Decoder one run on GPU:  84.6039047241211
+| Decoder one run on GPU:  82.20057678222656
+| Decoder one run on GPU:  84.12262725830078
+| Decoder one run on GPU:  84.77286529541016
+| Decoder one run on GPU:  83.9557113647461
+| Decoder one run on GPU:  84.27519989013672
+| Decoder one run on GPU:  84.52505493164062
+| Decoder one run on GPU:  84.32434844970703
+| Decoder one run on GPU:  84.59776306152344
+| Decoder one run on GPU:  84.30182647705078
+| Decoder one run on GPU:  84.60594940185547
+| Decoder one run on GPU:  84.91417694091797
+| Decoder one run on GPU:  84.12774658203125
+| Decoder one run on GPU:  84.01407623291016
+| Decoder one run on GPU:  83.90758514404297
+| Decoder one run on GPU:  83.94547271728516
+| Decoder one run on GPU:  83.8440933227539
+| Decoder one run on GPU:  83.95878601074219
+| Decoder one run on GPU:  84.19532775878906
+| Decoder one run on GPU:  82.89689636230469
+| Decoder one run on GPU:  82.05107116699219
+| Decoder one run on GPU:  82.37260437011719
+| Decoder one run on GPU:  83.46623992919922
+| Decoder one run on GPU:  83.1825942993164
+| Decoder one run on GPU:  83.51538848876953
+| Decoder one run on GPU:  83.66694641113281
+| Decoder one run on GPU:  84.26188659667969
+| Decoder one run on GPU:  82.85081481933594
+| Decoder one run on GPU:  82.0162582397461
+| Decoder one run on GPU:  82.37158203125
+| Decoder one run on GPU:  83.27372741699219
+| Decoder one run on GPU:  83.53485107421875
+| Decoder one run on GPU:  84.79027557373047
+| Decoder one run on GPU:  84.00383758544922
+| Decoder one run on GPU:  84.87731170654297
+| Decoder one run on GPU:  84.95410919189453
+| Decoder one run on GPU:  84.61721801757812
+| Decoder one run on GPU:  84.4431381225586
+| Decoder one run on GPU:  84.28441619873047
+| Decoder one run on GPU:  85.23161315917969
+| Decoder one run on GPU:  86.13069152832031
+| Decoder one run on GPU:  83.42425537109375
+| Decoder one run on GPU:  83.75193786621094
+| Decoder one run on GPU:  85.04934692382812
+| Decoder one run on GPU:  86.19007873535156
+| Decoder one run on GPU:  84.9776611328125
+| Decoder one run on GPU:  85.1568603515625
+| Decoder one run on GPU:  86.181884765625
+| Decoder one run on GPU:  85.0360336303711
+| Decoder one run on GPU:  84.17587280273438
+| Decoder one run on GPU:  84.46566772460938
+| Decoder one run on GPU:  84.0796127319336
+| Decoder one run on GPU:  83.97516632080078
+| Decoder one run on GPU:  84.01817321777344
+| Decoder one run on GPU:  84.0601577758789
+| Decoder one run on GPU:  82.62655639648438
+| Decoder one run on GPU:  82.33062744140625
+| Decoder one run on GPU:  82.31629180908203
+| Decoder one run on GPU:  82.42176055908203
+| Decoder one run on GPU:  82.77196502685547
+| Decoder one run on GPU:  82.6644515991211
+| Decoder one run on GPU:  82.39923095703125
+| Decoder one run on GPU:  82.56102752685547
+| Decoder one run on GPU:  83.4682846069336
+| Decoder one run on GPU:  84.10726165771484
+| Decoder one run on GPU:  84.28749084472656
+| Decoder one run on GPU:  84.39295959472656
+| Decoder one run on GPU:  83.98438262939453
+| Decoder one run on GPU:  83.77446746826172
+| Decoder one run on GPU:  84.54348754882812
+| Decoder one run on GPU:  84.86605072021484
+| Decoder one run on GPU:  84.32025909423828
+| Decoder one run on GPU:  84.26188659667969
+| Decoder one run on GPU:  82.6030044555664
+| Decoder one run on GPU:  82.07564544677734
+| Decoder one run on GPU:  81.88825225830078
+| Decoder one run on GPU:  82.97369384765625
+| Decoder one run on GPU:  83.3966064453125
+| Decoder one run on GPU:  83.6833267211914
+| Decoder one run on GPU:  83.80825805664062
+| Decoder one run on GPU:  83.85536193847656
+| Decoder one run on GPU:  84.08882904052734
+| Decoder one run on GPU:  86.63142395019531
+| Decoder one run on GPU:  86.42150115966797
+| Decoder one run on GPU:  85.55622100830078
+| Decoder one run on GPU:  84.2823715209961
+| Decoder one run on GPU:  85.52754974365234
+| Decoder one run on GPU:  83.45088195800781
+| Decoder one run on GPU:  83.4181137084961
+| Decoder one run on GPU:  83.53177642822266
+| Decoder one run on GPU:  84.88448333740234
+| Decoder one run on GPU:  84.32128143310547
+| Decoder one run on GPU:  84.50867462158203
+| Decoder one run on GPU:  84.23014068603516
+| Decoder one run on GPU:  84.03865814208984
+| Decoder one run on GPU:  86.18291473388672
+| Decoder one run on GPU:  89.1146240234375
+| Decoder one run on GPU:  90.40589141845703
+| Decoder one run on GPU:  90.51136016845703
+| Decoder one run on GPU:  87.44242858886719
+| Decoder one run on GPU:  85.67193603515625
+| Decoder one run on GPU:  83.38227081298828
+| Decoder one run on GPU:  83.29625701904297
+| Decoder one run on GPU:  82.45145416259766
+| Decoder one run on GPU:  83.9024658203125
+| Decoder one run on GPU:  82.49241638183594
+| Decoder one run on GPU:  83.2389144897461
+| Decoder one run on GPU:  84.54656219482422
+| Decoder one run on GPU:  85.48863983154297
+| Decoder one run on GPU:  85.12614440917969
+| Decoder one run on GPU:  84.35404968261719
+| Decoder one run on GPU:  85.68524932861328
+| Decoder one run on GPU:  86.17676544189453
+| Decoder one run on GPU:  83.31571197509766
+| Decoder one run on GPU:  82.74944305419922
+| Decoder one run on GPU:  82.47602844238281
+| Decoder one run on GPU:  83.65670776367188
+| Decoder one run on GPU:  61%|██████▏   | 184/300 [00:15<00:09, 11.84it/s] 62%|██████▏   | 186/300 [00:15<00:09, 11.78it/s] 63%|██████▎   | 188/300 [00:15<00:09, 11.76it/s] 63%|██████▎   | 190/300 [00:16<00:09, 11.78it/s] 64%|██████▍   | 192/300 [00:16<00:09, 11.85it/s] 65%|██████▍   | 194/300 [00:16<00:08, 11.94it/s] 65%|██████▌   | 196/300 [00:16<00:08, 11.99it/s] 66%|██████▌   | 198/300 [00:16<00:08, 12.04it/s] 67%|██████▋   | 200/300 [00:16<00:08, 12.02it/s] 67%|██████▋   | 202/300 [00:17<00:08, 11.97it/s] 68%|██████▊   | 204/300 [00:17<00:08, 11.87it/s] 69%|██████▊   | 206/300 [00:17<00:08, 11.67it/s] 69%|██████▉   | 208/300 [00:17<00:07, 11.51it/s] 70%|███████   | 210/300 [00:17<00:07, 11.28it/s] 71%|███████   | 212/300 [00:17<00:07, 11.21it/s] 71%|███████▏  | 214/300 [00:18<00:07, 11.13it/s] 72%|███████▏  | 216/300 [00:18<00:07, 11.15it/s] 73%|███████▎  | 218/300 [00:18<00:07, 11.23it/s] 73%|███████▎  | 220/300 [00:18<00:07, 11.36it/s] 74%|███████▍  | 222/300 [00:18<00:06, 11.48it/s] 75%|███████▍  | 224/300 [00:19<00:06, 11.56it/s] 75%|███████▌  | 226/300 [00:19<00:06, 11.57it/s] 76%|███████▌  | 228/300 [00:19<00:06, 11.62it/s] 77%|███████▋  | 230/300 [00:19<00:06, 11.66it/s] 77%|███████▋  | 232/300 [00:19<00:05, 11.68it/s] 78%|███████▊  | 234/300 [00:19<00:05, 11.76it/s] 79%|███████▊  | 236/300 [00:20<00:05, 11.76it/s] 79%|███████▉  | 238/300 [00:20<00:05, 11.78it/s] 80%|████████  | 240/300 [00:20<00:05, 11.75it/s] 81%|████████  | 242/300 [00:20<00:04, 11.66it/s] 81%|████████▏ | 244/300 [00:20<00:04, 11.73it/s] 82%|████████▏ | 246/300 [00:20<00:04, 11.83it/s] 83%|████████▎ | 248/300 [00:21<00:04, 11.85it/s] 83%|████████▎ | 250/300 [00:21<00:04, 11.77it/s] 84%|████████▍ | 252/300 [00:21<00:04, 11.76it/s] 85%|████████▍ | 254/300 [00:21<00:03, 11.72it/s] 85%|████████▌ | 256/300 [00:21<00:03, 11.77it/s] 86%|████████▌ | 258/300 [00:21<00:03, 11.87it/s] 87%|████████▋ | 260/300 [00:22<00:03, 11.93it/s] 87%|████████▋ | 262/300 [00:22<00:03, 11.93it/s] 88%|████████▊ | 264/300 [00:22<00:03, 11.91it/s] 89%|████████▊ | 266/300 [00:22<00:02, 11.89it/s] 89%|████████▉ | 268/300 [00:22<00:02, 11.81it/s] 90%|█████████ | 270/300 [00:22<00:02, 11.82it/s] 91%|█████████ | 272/300 [00:23<00:02, 11.93it/s] 91%|█████████▏| 274/300 [00:23<00:02, 11.97it/s] 92%|█████████▏| 276/300 [00:23<00:02, 11.96it/s] 93%|█████████▎| 278/300 [00:23<00:01, 11.93it/s] 93%|█████████▎| 280/300 [00:23<00:01, 11.90it/s] 94%|█████████▍| 282/300 [00:23<00:01, 11.85it/s] 95%|█████████▍| 284/300 [00:24<00:01, 11.83it/s] 95%|█████████▌| 286/300 [00:24<00:01, 11.89it/s] 96%|█████████▌| 288/300 [00:24<00:01, 11.93it/s] 97%|█████████▋| 290/300 [00:24<00:00, 11.97it/s] 97%|█████████▋| 292/300 [00:24<00:00, 11.99it/s] 98%|█████████▊| 294/300 [00:24<00:00, 11.93it/s] 99%|█████████▊| 296/300 [00:25<00:00, 11.91it/s] 99%|█████████▉| 298/300 [00:25<00:00, 11.88it/s]100%|██████████| 300/300 [00:25<00:00, 11.85it/s]100%|██████████| 300/300 [00:25<00:00, 11.78it/s] 85.94329833984375
+| Decoder one run on GPU:  86.60275268554688
+| Decoder one run on GPU:  84.75545501708984
+| Decoder one run on GPU:  85.04422760009766
+| Decoder one run on GPU:  85.63814544677734
+| Decoder one run on GPU:  84.58035278320312
+| Decoder one run on GPU:  84.08882904052734
+| Decoder one run on GPU:  83.89427185058594
+| Decoder one run on GPU:  82.53849792480469
+| Decoder one run on GPU:  82.16371154785156
+| Decoder one run on GPU:  82.06950378417969
+| Decoder one run on GPU:  82.31014251708984
+| Decoder one run on GPU:  82.6767349243164
+| Decoder one run on GPU:  82.16985321044922
+| Decoder one run on GPU:  82.09919738769531
+| Decoder one run on GPU:  83.14265441894531
+| Decoder one run on GPU:  83.88710021972656
+| Decoder one run on GPU:  83.8307876586914
+| Decoder one run on GPU:  84.41958618164062
+| Decoder one run on GPU:  84.89676666259766
+| Decoder one run on GPU:  86.79936218261719
+| Decoder one run on GPU:  88.92108917236328
+| Decoder one run on GPU:  88.953857421875
+| Decoder one run on GPU:  89.21087646484375
+| Decoder one run on GPU:  89.66963195800781
+| Decoder one run on GPU:  90.41715240478516
+| Decoder one run on GPU:  95.04972839355469
+| Decoder one run on GPU:  90.5881576538086
+| Decoder one run on GPU:  90.1560287475586
+| Decoder one run on GPU:  90.64857482910156
+| Decoder one run on GPU:  91.37971496582031
+| Decoder one run on GPU:  91.44319915771484
+| Decoder one run on GPU:  87.00006103515625
+| Decoder one run on GPU:  86.29759979248047
+| Decoder one run on GPU:  88.59442901611328
+| Decoder one run on GPU:  87.12601470947266
+| Decoder one run on GPU:  83.84102630615234
+| Decoder one run on GPU:  85.67091369628906
+| Decoder one run on GPU:  84.10214233398438
+| Decoder one run on GPU:  84.1523208618164
+| Decoder one run on GPU:  85.76512145996094
+| Decoder one run on GPU:  85.85011291503906
+| Decoder one run on GPU:  86.41433715820312
+| Decoder one run on GPU:  85.64019012451172
+| Decoder one run on GPU:  84.50150299072266
+| Decoder one run on GPU:  84.35302734375
+| Decoder one run on GPU:  85.29408264160156
+| Decoder one run on GPU:  85.27257537841797
+| Decoder one run on GPU:  85.07596588134766
+| Decoder one run on GPU:  84.11341094970703
+| Decoder one run on GPU:  83.31775665283203
+| Decoder one run on GPU:  84.9981460571289
+| Decoder one run on GPU:  84.79948425292969
+| Decoder one run on GPU:  84.39295959472656
+| Decoder one run on GPU:  84.48512268066406
+| Decoder one run on GPU:  85.12409973144531
+| Decoder one run on GPU:  85.94226837158203
+| Decoder one run on GPU:  86.79116821289062
+| Decoder one run on GPU:  87.21612548828125
+| Decoder one run on GPU:  84.99507141113281
+| Decoder one run on GPU:  83.2542724609375
+| Decoder one run on GPU:  82.74227142333984
+| Decoder one run on GPU:  82.4238052368164
+| Decoder one run on GPU:  83.56454467773438
+| Decoder one run on GPU:  84.40217590332031
+| Decoder one run on GPU:  86.34060668945312
+| Decoder one run on GPU:  86.11840057373047
+| Decoder one run on GPU:  85.3575668334961
+| Decoder one run on GPU:  84.87321472167969
+| Decoder one run on GPU:  85.0298843383789
+| Decoder one run on GPU:  86.75020599365234
+| Decoder one run on GPU:  85.02272033691406
+| Decoder one run on GPU:  82.92147064208984
+| Decoder one run on GPU:  82.34598541259766
+| Decoder one run on GPU:  82.68390655517578
+| Decoder one run on GPU:  82.1391372680664
+| Decoder one run on GPU:  83.26348876953125
+| Decoder one run on GPU:  83.72428894042969
+| Decoder one run on GPU:  83.73043060302734
+| Decoder one run on GPU:  84.1338882446289
+| Decoder one run on GPU:  83.99667358398438
+| Decoder one run on GPU:  84.29055786132812
+| Decoder one run on GPU:  84.51789093017578
+| Decoder one run on GPU:  86.1317138671875
+| Decoder one run on GPU:  85.50605010986328
+| Decoder one run on GPU:  85.75385284423828
+| Decoder one run on GPU:  82.65113830566406
+| Decoder one run on GPU:  81.96812438964844
+| Decoder one run on GPU:  82.11353302001953
+| Decoder one run on GPU:  82.48627471923828
+| Decoder one run on GPU:  82.79551696777344
+| Decoder one run on GPU:  83.69459533691406
+| Decoder one run on GPU:  83.74169921875
+| Decoder one run on GPU:  84.15846252441406
+| Decoder one run on GPU:  84.38272094726562
+| Decoder one run on GPU:  84.4615707397461
+| Decoder one run on GPU:  84.24038696289062
+| Decoder one run on GPU:  84.54450988769531
+| Decoder one run on GPU:  85.52960205078125
+| Decoder one run on GPU:  84.94182586669922
+| Decoder one run on GPU:  84.67046356201172
+| Decoder one run on GPU:  83.3986587524414
+| Decoder one run on GPU:  82.5323486328125
+| Decoder one run on GPU:  82.68083190917969
+| Decoder one run on GPU:  83.7017593383789
+| Decoder one run on GPU:  83.01158142089844
+| Decoder one run on GPU:  82.587646484375
+| Decoder one run on GPU:  82.52518463134766
+| Decoder one run on GPU:  83.2010269165039
+| Decoder one run on GPU:  84.75852966308594
+| Decoder one run on GPU:  84.68377685546875
+| Decoder one run on GPU:  84.24755096435547
+| Decoder one run on GPU:  84.27519989013672
+| Decoder one run on GPU:  84.22297668457031
+| Decoder one run on GPU:  84.6714859008789
+| Decoder one run on GPU:  84.81587219238281
+| Decoder one run on GPU:  84.76979064941406
+| Decoder latencies: [82.587646484375, 82.59174346923828, 82.6030044555664, 82.62655639648438, 82.65113830566406, 82.6644515991211, 82.6767349243164, 82.68083190917969, 82.68390655517578, 82.74227142333984, 82.74944305419922, 82.77196502685547, 82.78937530517578, 82.79551696777344, 82.85081481933594, 82.89689636230469, 82.92147064208984, 82.97369384765625, 83.01158142089844, 83.14265441894531, 83.1825942993164, 83.2010269165039, 83.22354888916016, 83.2389144897461, 83.2542724609375, 83.26348876953125, 83.27372741699219, 83.28396606445312, 83.29625701904297, 83.29933166503906, 83.31571197509766, 83.31775665283203, 83.38227081298828, 83.39353942871094, 83.3966064453125, 83.3986587524414, 83.4181137084961, 83.42425537109375, 83.45088195800781, 83.46623992919922, 83.4682846069336, 83.50822448730469, 83.51538848876953, 83.525634765625, 83.53177642822266, 83.53485107421875, 83.56454467773438, 83.58604431152344, 83.59423828125, 83.65670776367188, 83.66694641113281, 83.66694641113281, 83.6833267211914, 83.69459533691406, 83.7017593383789, 83.70995330810547, 83.72428894042969, 83.73043060302734, 83.74169921875, 83.74578857421875, 83.75193786621094, 83.77446746826172, 83.80825805664062, 83.82361602783203, 83.8307876586914, 83.84102630615234, 83.8440933227539, 83.85536193847656, 83.88710021972656, 83.89427185058594, 83.9024658203125, 83.90758514404297, 83.90962982177734, 83.94547271728516, 83.94854736328125, 83.9557113647461, 83.95878601074219, 83.97209930419922, 83.97516632080078, 83.98438262939453, 83.99667358398438, 84.00383758544922, 84.01407623291016, 84.01817321777344, 84.0232925415039, 84.03865814208984, 84.04684448242188, 84.0601577758789, 84.0796127319336, 84.08882904052734, 84.08882904052734, 84.10214233398438, 84.10726165771484, 84.11341094970703, 84.1164779663086, 84.12262725830078, 84.12774658203125, 84.1338882446289, 84.15129852294922, 84.1523208618164, 84.1533432006836, 84.15846252441406, 84.17587280273438, 84.19532775878906, 84.22297668457031, 84.23014068603516, 84.23014068603516, 84.2393569946289, 84.24038696289062, 84.24755096435547, 84.26188659667969, 84.26188659667969, 84.26290893554688, 84.27519989013672, 84.27519989013672, 84.2823715209961, 84.2823715209961, 84.28441619873047, 84.28749084472656, 84.29055786132812, 84.30182647705078, 84.32025909423828, 84.32128143310547, 84.32434844970703, 84.32844543457031, 84.35302734375, 84.35404968261719, 84.38272094726562, 84.3878402709961, 84.39295959472656, 84.39295959472656, 84.40217590332031, 84.41958618164062, 84.4431381225586, 84.4615707397461, 84.46566772460938, 84.4738540649414, 84.48512268066406, 84.4922866821289, 84.4933090209961, 84.50150299072266, 84.50867462158203, 84.51789093017578, 84.52505493164062, 84.53836822509766, 84.54348754882812, 84.54450988769531, 84.54656219482422, 84.58035278320312, 84.59776306152344, 84.6039047241211, 84.60594940185547, 84.61721801757812, 84.64998626708984, 84.67046356201172, 84.6714859008789, 84.68377685546875, 84.6960678100586, 84.75545501708984, 84.75852966308594, 84.76979064941406, 84.77286529541016, 84.79027557373047, 84.79948425292969, 84.81587219238281, 84.86605072021484, 84.87321472167969, 84.87731170654297, 84.88448333740234, 84.88550567626953, 84.89676666259766, 84.91417694091797, 84.94182586669922, 84.95410919189453, 84.95410919189453, 84.9776611328125, 84.98687744140625, 84.99507141113281, 84.9981460571289, 85.02272033691406, 85.0298843383789, 85.0360336303711, 85.04422760009766, 85.04934692382812, 85.07596588134766, 85.11078643798828, 85.12409973144531, 85.12614440917969, 85.14559936523438, 85.1568603515625, 85.18553924560547, 85.23161315917969, 85.27257537841797, 85.29408264160156, 85.3575668334961, 85.38521575927734, 85.3944320678711, 85.48863983154297, 85.50605010986328, 85.52754974365234, 85.52960205078125, 85.54803466796875, 85.55622100830078, 85.58489227294922, 85.63814544677734, 85.64019012451172, 85.67091369628906, 85.67193603515625, 85.68524932861328, 85.75385284423828, 85.76512145996094, 85.85011291503906, 85.94226837158203, 85.94329833984375, 85.9678726196289, 86.11840057373047, 86.12044525146484, 86.13069152832031, 86.1317138671875, 86.17676544189453, 86.181884765625, 86.18291473388672, 86.19007873535156, 86.21158599853516, 86.29759979248047, 86.34060668945312, 86.39078521728516, 86.41433715820312, 86.42150115966797, 86.48499298095703, 86.53311920166016, 86.59661102294922, 86.59967803955078, 86.60275268554688, 86.63142395019531, 86.70719909667969, 86.71539306640625, 86.75020599365234, 86.75225830078125, 86.79116821289062]
+
+| Decoder latency: Mean: 84.4479702313741 ms; 	 Std: 1.0128903503117026 ms
+
+| Overall Latency: 88.56029450297355

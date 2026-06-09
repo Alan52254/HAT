@@ -1,0 +1,32 @@
+total 20G
+drwxr-xr-x 2 43130 108336 4.0K Jun  1 09:46 .
+drwxr-xr-x 2 43130 108336 4.0K Jun  1 00:55 ..
+-rw-r--r-- 1 43130 108336 794M Jun  1 05:34 checkpoint26.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 05:44 checkpoint27.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 05:55 checkpoint28.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 06:05 checkpoint29.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 06:16 checkpoint30.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 06:27 checkpoint31.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 06:37 checkpoint32.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 06:48 checkpoint33.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 06:58 checkpoint34.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 07:09 checkpoint35.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 07:19 checkpoint36.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 07:30 checkpoint37.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 07:40 checkpoint38.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 07:51 checkpoint39.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 08:01 checkpoint40.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 08:12 checkpoint41.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 08:23 checkpoint42.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 08:33 checkpoint43.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 08:44 checkpoint44.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 08:54 checkpoint45.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 07:23 checkpoint_37_40000.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 08:10 checkpoint_41_45000.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 08:56 checkpoint_46_50000.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 08:54 checkpoint_best.pt
+-rw-r--r-- 1 43130 108336 794M Jun  1 08:56 checkpoint_last.pt
+drwxr-xr-x 2 43130 108336 4.0K Jun  1 09:46 exp
+drwxr-xr-x 2 43130 108336 4.0K Jun  1 01:02 tensorboard
+
+20G	/home/u4290247/HAT/checkpoints/iwslt14_super_full50000_fromscratch

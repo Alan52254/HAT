@@ -1,0 +1,6 @@
+rank,predicted_latency_ms,latency_constraint_ms,ranking_note,config_path
+1,83.98780226707458,90.0,predictor_only_capacity_proxy,../reports/final_eval/search/hat_pipeline_20260609_01/candidates/predictor_only_topk/top_1.yml
+2,83.71983170509338,90.0,predictor_only_capacity_proxy,../reports/final_eval/search/hat_pipeline_20260609_01/candidates/predictor_only_topk/top_2.yml
+3,83.61119031906128,90.0,predictor_only_capacity_proxy,../reports/final_eval/search/hat_pipeline_20260609_01/candidates/predictor_only_topk/top_3.yml
+4,83.10862183570862,90.0,predictor_only_capacity_proxy,../reports/final_eval/search/hat_pipeline_20260609_01/candidates/predictor_only_topk/top_4.yml
+5,82.96722173690796,90.0,predictor_only_capacity_proxy,../reports/final_eval/search/hat_pipeline_20260609_01/candidates/predictor_only_topk/top_5.yml
