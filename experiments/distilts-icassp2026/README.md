@@ -22,6 +22,8 @@ The interrupted job is not counted as a formal result. See
 - `results_snapshot.csv`: machine-readable metrics extracted from every raw job
   log present in this snapshot.
 - `REPRODUCTION_REPORT.md`: interim report and interpretation boundaries.
+- `FULL_OBSERVATION_REPORT_ZH.md`: comprehensive Chinese paper/methodology,
+  architecture, progress, results, resource-cost, and released-code audit report.
 - `SETUP_AND_CODE_CHANGES.md`: environment setup, compatibility corrections,
   limitations, and execution notes.
 - `reproduce_core.py`: resumable 30-job core queue.
@@ -62,4 +64,3 @@ environment, and binary checkpoints are excluded from ordinary Git. They are
 large generated artifacts and include files above GitHub's normal 100 MB limit.
 The original local snapshot containing checkpoints is retained separately at
 `/home/u4290247/DistilTS_experiment_snapshot_2026-08-05_0820`.
-
