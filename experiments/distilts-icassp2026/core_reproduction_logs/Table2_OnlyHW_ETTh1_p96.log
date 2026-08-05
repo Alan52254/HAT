@@ -1,0 +1,81 @@
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          Exp_DistilTS        Is Training:        1                   
+  Model ID:           core_Table2_OnlyHW_ETTh1_p96Model:              iTransformer        
+
+[1mData Loader[0m
+  Data:               ETTh1               Root Path:          ./dataset/ETT-small/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            512                 
+  n heads:            4                   e layers:           1                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       4                   Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                CoreReproduction    Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : Exp_DistilTS_core_Table2_OnlyHW_ETTh1_p96_iTransformer_0.0001_0.5_TimeMoe>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8033
+val 2785
+test 2785
+	iters: 100, epoch: 1 | loss: 0.4529338
+	speed: 2.9566s/iter; left time: 2687.5782s
+	iters: 200, epoch: 1 | loss: 0.3742268
+	speed: 2.3964s/iter; left time: 1938.6601s
+Epoch: 1 cost time: 660.5385558605194
+Epoch: 1, Steps: 252 | Train Loss: 0.4598026 Vali Loss: 0.6842901 Test Loss: 0.3776242
+Validation loss decreased (inf --> 0.684290).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.3810421
+	speed: 5.5170s/iter; left time: 3624.6704s
+	iters: 200, epoch: 2 | loss: 0.5122728
+	speed: 2.3904s/iter; left time: 1331.4566s
+Epoch: 2 cost time: 663.1215887069702
+Epoch: 2, Steps: 252 | Train Loss: 0.3826020 Vali Loss: 0.6830323 Test Loss: 0.3762983
+Validation loss decreased (0.684290 --> 0.683032).  Saving model ...
+	iters: 100, epoch: 3 | loss: 0.3815688
+	speed: 5.5001s/iter; left time: 2227.5432s
+	iters: 200, epoch: 3 | loss: 0.3116526
+	speed: 2.3964s/iter; left time: 730.9078s
+Epoch: 3 cost time: 663.6393086910248
+Epoch: 3, Steps: 252 | Train Loss: 0.3547981 Vali Loss: 0.6927183 Test Loss: 0.3746985
+EarlyStopping counter: 1 out of 3
+	iters: 100, epoch: 4 | loss: 0.3394001
+	speed: 5.4887s/iter; left time: 839.7646s
+	iters: 200, epoch: 4 | loss: 0.3080433
+	speed: 2.3892s/iter; left time: 126.6252s
+Epoch: 4 cost time: 660.2691316604614
+Epoch: 4, Steps: 252 | Train Loss: 0.3375320 Vali Loss: 0.6821104 Test Loss: 0.3827605
+Validation loss decreased (0.683032 --> 0.682110).  Saving model ...
+>>>>>>>testing : Exp_DistilTS_core_Table2_OnlyHW_ETTh1_p96_iTransformer_0.0001_0.5_TimeMoe<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+test shape: (2785, 96, 7) (2785, 96, 7)
+test shape: (2785, 96, 7) (2785, 96, 7)
+mse:0.3820141553878784, mae:0.40854355692863464, rmse:0.6180729269981384, mape:10.4473295211792, mspe:47791.42578125
+================================================================================
+Model Profiling Summary
+Total Params             : 3,465,312
+Inference Time (s)       : 0.001684
+GPU Mem Footprint (MB)   : 266.61
+Peak Mem (MB)            : 275.24
+================================================================================

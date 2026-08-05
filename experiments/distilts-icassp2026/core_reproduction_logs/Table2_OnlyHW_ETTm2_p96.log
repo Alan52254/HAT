@@ -1,0 +1,146 @@
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          Exp_DistilTS        Is Training:        1                   
+  Model ID:           core_Table2_OnlyHW_ETTm2_p96Model:              iTransformer        
+
+[1mData Loader[0m
+  Data:               ETTm2               Root Path:          ./dataset/ETT-small/
+  Data Path:          ETTm2.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            512                 
+  n heads:            4                   e layers:           1                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       4                   Batch Size:         32                  
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                CoreReproduction    Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : Exp_DistilTS_core_Table2_OnlyHW_ETTm2_p96_iTransformer_0.0001_0.5_TimeMoe>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 33953
+val 11425
+test 11425
+	iters: 100, epoch: 1 | loss: 0.5111655
+	speed: 2.9141s/iter; left time: 12090.5481s
+	iters: 200, epoch: 1 | loss: 0.1439005
+	speed: 2.3493s/iter; left time: 9512.2263s
+	iters: 300, epoch: 1 | loss: 0.2136547
+	speed: 2.3515s/iter; left time: 9286.0223s
+	iters: 400, epoch: 1 | loss: 0.1849357
+	speed: 2.3520s/iter; left time: 9052.7044s
+	iters: 500, epoch: 1 | loss: 0.1254076
+	speed: 2.3574s/iter; left time: 8837.9040s
+	iters: 600, epoch: 1 | loss: 0.1997795
+	speed: 2.3550s/iter; left time: 8593.4119s
+	iters: 700, epoch: 1 | loss: 0.1970483
+	speed: 2.3503s/iter; left time: 8341.2466s
+	iters: 800, epoch: 1 | loss: 0.2282893
+	speed: 2.3525s/iter; left time: 8113.9172s
+	iters: 900, epoch: 1 | loss: 0.2569937
+	speed: 2.3597s/iter; left time: 7902.6758s
+	iters: 1000, epoch: 1 | loss: 0.2546871
+	speed: 2.3558s/iter; left time: 7654.0680s
+Epoch: 1 cost time: 2556.4085400104523
+Epoch: 1, Steps: 1062 | Train Loss: 0.2491098 Vali Loss: 0.1210593 Test Loss: 0.1730428
+Validation loss decreased (inf --> 0.121059).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.2485933
+	speed: 5.6862s/iter; left time: 17553.2830s
+	iters: 200, epoch: 2 | loss: 0.1706071
+	speed: 2.3566s/iter; left time: 7039.1712s
+	iters: 300, epoch: 2 | loss: 0.1416483
+	speed: 2.3507s/iter; left time: 6786.3858s
+	iters: 400, epoch: 2 | loss: 0.1290908
+	speed: 2.3543s/iter; left time: 6561.3859s
+	iters: 500, epoch: 2 | loss: 0.2926179
+	speed: 2.3584s/iter; left time: 6337.1015s
+	iters: 600, epoch: 2 | loss: 0.3114744
+	speed: 2.3629s/iter; left time: 6112.9087s
+	iters: 700, epoch: 2 | loss: 0.2797166
+	speed: 2.3575s/iter; left time: 5863.0164s
+	iters: 800, epoch: 2 | loss: 0.1523857
+	speed: 2.3512s/iter; left time: 5612.2484s
+	iters: 900, epoch: 2 | loss: 0.1321326
+	speed: 2.3527s/iter; left time: 5380.6045s
+	iters: 1000, epoch: 2 | loss: 0.1826137
+	speed: 2.3542s/iter; left time: 5148.6828s
+Epoch: 2 cost time: 2560.7436006069183
+Epoch: 2, Steps: 1062 | Train Loss: 0.2045556 Vali Loss: 0.1225970 Test Loss: 0.1710605
+EarlyStopping counter: 1 out of 3
+	iters: 100, epoch: 3 | loss: 0.2025199
+	speed: 5.6683s/iter; left time: 11478.3369s
+	iters: 200, epoch: 3 | loss: 0.1883633
+	speed: 2.3522s/iter; left time: 4528.0734s
+	iters: 300, epoch: 3 | loss: 0.1943881
+	speed: 2.3696s/iter; left time: 4324.5765s
+	iters: 400, epoch: 3 | loss: 0.1813376
+	speed: 2.3622s/iter; left time: 4074.8334s
+	iters: 500, epoch: 3 | loss: 0.1878731
+	speed: 2.3472s/iter; left time: 3814.2683s
+	iters: 600, epoch: 3 | loss: 0.1782480
+	speed: 2.3522s/iter; left time: 3587.0712s
+	iters: 700, epoch: 3 | loss: 0.1878592
+	speed: 2.3479s/iter; left time: 3345.7999s
+	iters: 800, epoch: 3 | loss: 0.1550613
+	speed: 2.3469s/iter; left time: 3109.6625s
+	iters: 900, epoch: 3 | loss: 0.1131254
+	speed: 2.3627s/iter; left time: 2894.2579s
+	iters: 1000, epoch: 3 | loss: 0.1167968
+	speed: 2.3471s/iter; left time: 2640.5187s
+Epoch: 3 cost time: 2557.8741710186005
+Epoch: 3, Steps: 1062 | Train Loss: 0.1905984 Vali Loss: 0.1258496 Test Loss: 0.1750919
+EarlyStopping counter: 2 out of 3
+	iters: 100, epoch: 4 | loss: 0.2880924
+	speed: 5.6766s/iter; left time: 5466.6018s
+	iters: 200, epoch: 4 | loss: 0.2270891
+	speed: 2.3518s/iter; left time: 2029.5774s
+	iters: 300, epoch: 4 | loss: 0.2180815
+	speed: 2.3528s/iter; left time: 1795.2207s
+	iters: 400, epoch: 4 | loss: 0.2367833
+	speed: 2.3549s/iter; left time: 1561.3020s
+	iters: 500, epoch: 4 | loss: 0.2421342
+	speed: 2.3469s/iter; left time: 1321.2855s
+	iters: 600, epoch: 4 | loss: 0.1435780
+	speed: 2.3485s/iter; left time: 1087.3530s
+	iters: 700, epoch: 4 | loss: 0.1732607
+	speed: 2.3468s/iter; left time: 851.9020s
+	iters: 800, epoch: 4 | loss: 0.1473425
+	speed: 2.3619s/iter; left time: 621.1682s
+	iters: 900, epoch: 4 | loss: 0.1380108
+	speed: 2.3533s/iter; left time: 383.5839s
+	iters: 1000, epoch: 4 | loss: 0.1449733
+	speed: 2.3469s/iter; left time: 147.8542s
+Epoch: 4 cost time: 2554.173553466797
+Epoch: 4, Steps: 1062 | Train Loss: 0.1822354 Vali Loss: 0.1258682 Test Loss: 0.1762868
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : Exp_DistilTS_core_Table2_OnlyHW_ETTm2_p96_iTransformer_0.0001_0.5_TimeMoe<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 11425
+test shape: (11425, 96, 7) (11425, 96, 7)
+test shape: (11425, 96, 7) (11425, 96, 7)
+mse:0.17325159907341003, mae:0.2629874050617218, rmse:0.4162350296974182, mape:1.071370005607605, mspe:196.58819580078125
+================================================================================
+Model Profiling Summary
+Total Params             : 3,465,312
+Inference Time (s)       : 0.001685
+GPU Mem Footprint (MB)   : 266.61
+Peak Mem (MB)            : 275.24
+================================================================================

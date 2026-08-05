@@ -1,0 +1,187 @@
+diff --git a/exp/exp_DistilTS.py b/exp/exp_DistilTS.py
+index f9e6612..400edf6 100644
+--- a/exp/exp_DistilTS.py
++++ b/exp/exp_DistilTS.py
+@@ -344,18 +344,21 @@ class Exp_DistilTS(Exp_Basic):
+             dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
+             dec_inp = torch.cat([batch_y[:, :self.args.label_len, :], dec_inp], dim=1).float().to(self.device)
+ 
+-            torch.cuda.reset_peak_memory_stats()
+-            torch.cuda.synchronize()
++            use_cuda = self.device.type == 'cuda' and torch.cuda.is_available()
++            if use_cuda:
++                torch.cuda.reset_peak_memory_stats()
++                torch.cuda.synchronize()
+             start_time = time.time()
+ 
+             _ = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+ 
+-            torch.cuda.synchronize()
++            if use_cuda:
++                torch.cuda.synchronize()
+             end_time = time.time()
+ 
+             inference_time = end_time - start_time
+-            gpu_mem = torch.cuda.memory_allocated(self.device) / 1024 / 1024
+-            peak_mem = torch.cuda.max_memory_allocated(self.device) / 1024 / 1024
++            gpu_mem = torch.cuda.memory_allocated(self.device) / 1024 / 1024 if use_cuda else 0.0
++            peak_mem = torch.cuda.max_memory_allocated(self.device) / 1024 / 1024 if use_cuda else 0.0
+             total_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
+ 
+             print("=" * 80)
+@@ -427,4 +430,4 @@ class VarTimeFactorAligner(nn.Module):
+             if torch.cuda.is_available():
+                 torch.cuda.empty_cache()
+ 
+-        return total_loss / blocks
+\ No newline at end of file
++        return total_loss / blocks
+diff --git a/exp/exp_DistilTS_FDKD.py b/exp/exp_DistilTS_FDKD.py
+index 0ece364..d9be62b 100644
+--- a/exp/exp_DistilTS_FDKD.py
++++ b/exp/exp_DistilTS_FDKD.py
+@@ -349,18 +349,21 @@ class Exp_DistilTS(Exp_Basic):
+             dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
+             dec_inp = torch.cat([batch_y[:, :self.args.label_len, :], dec_inp], dim=1).float().to(self.device)
+ 
+-            torch.cuda.reset_peak_memory_stats()
+-            torch.cuda.synchronize()
++            use_cuda = self.device.type == 'cuda' and torch.cuda.is_available()
++            if use_cuda:
++                torch.cuda.reset_peak_memory_stats()
++                torch.cuda.synchronize()
+             start_time = time.time()
+ 
+             _ = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+ 
+-            torch.cuda.synchronize()
++            if use_cuda:
++                torch.cuda.synchronize()
+             end_time = time.time()
+ 
+             inference_time = end_time - start_time
+-            gpu_mem = torch.cuda.memory_allocated(self.device) / 1024 / 1024
+-            peak_mem = torch.cuda.max_memory_allocated(self.device) / 1024 / 1024
++            gpu_mem = torch.cuda.memory_allocated(self.device) / 1024 / 1024 if use_cuda else 0.0
++            peak_mem = torch.cuda.max_memory_allocated(self.device) / 1024 / 1024 if use_cuda else 0.0
+             total_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
+ 
+             print("=" * 80)
+diff --git a/exp/exp_DistilTS_TKD.py b/exp/exp_DistilTS_TKD.py
+index 11ffc99..10d25cf 100644
+--- a/exp/exp_DistilTS_TKD.py
++++ b/exp/exp_DistilTS_TKD.py
+@@ -369,18 +369,21 @@ class Exp_DistilTS(Exp_Basic):
+             dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
+             dec_inp = torch.cat([batch_y[:, :self.args.label_len, :], dec_inp], dim=1).float().to(self.device)
+ 
+-            torch.cuda.reset_peak_memory_stats()
+-            torch.cuda.synchronize()
++            use_cuda = self.device.type == 'cuda' and torch.cuda.is_available()
++            if use_cuda:
++                torch.cuda.reset_peak_memory_stats()
++                torch.cuda.synchronize()
+             start_time = time.time()
+ 
+             _ = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+ 
+-            torch.cuda.synchronize()
++            if use_cuda:
++                torch.cuda.synchronize()
+             end_time = time.time()
+ 
+             inference_time = end_time - start_time
+-            gpu_mem = torch.cuda.memory_allocated(self.device) / 1024 / 1024
+-            peak_mem = torch.cuda.max_memory_allocated(self.device) / 1024 / 1024
++            gpu_mem = torch.cuda.memory_allocated(self.device) / 1024 / 1024 if use_cuda else 0.0
++            peak_mem = torch.cuda.max_memory_allocated(self.device) / 1024 / 1024 if use_cuda else 0.0
+             total_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
+ 
+             print("=" * 80)
+diff --git a/exp/exp_basic.py b/exp/exp_basic.py
+index 52f39c6..e5d66a3 100644
+--- a/exp/exp_basic.py
++++ b/exp/exp_basic.py
+@@ -21,12 +21,13 @@ class Exp_Basic(object):
+         return None
+ 
+     def _acquire_device(self):
+-        if self.args.use_gpu and self.args.gpu_type == 'cuda':
++        if self.args.use_gpu and self.args.gpu_type == 'cuda' and torch.cuda.is_available():
+             os.environ["CUDA_VISIBLE_DEVICES"] = str(
+                 self.args.gpu) if not self.args.use_multi_gpu else self.args.devices
+             device = torch.device('cuda:{}'.format(self.args.gpu))
+             print('Use GPU: cuda:{}'.format(self.args.gpu))
+-        elif self.args.use_gpu and self.args.gpu_type == 'mps':
++        elif (self.args.use_gpu and self.args.gpu_type == 'mps'
++              and hasattr(torch.backends, 'mps') and torch.backends.mps.is_available()):
+             device = torch.device('mps')
+             print('Use GPU: mps')
+         else:
+diff --git a/models/TimeMoe.py b/models/TimeMoe.py
+index 19a5138..3fb38d2 100644
+--- a/models/TimeMoe.py
++++ b/models/TimeMoe.py
+@@ -25,6 +25,7 @@ class Model(nn.Module):
+         )
+ 
+         self.gen_chunk = configs.gen_chunk
++        self.return_hidden = bool(getattr(configs, 'vt_loss', 0))
+         
+         logging.info(
+             f"[TimeMoE-Adapter] dtype={getattr(inner, 'dtype', 'unknown')}; "
+@@ -139,7 +140,11 @@ class Model(nn.Module):
+ 
+         # preds_flat = self._generate_for_channels(x_ctx)
+ 
+-        preds_flat, hidden = self._generate_for_channels(x_ctx, return_hidden=True)
++        generated = self._generate_for_channels(x_ctx, return_hidden=self.return_hidden)
++        if self.return_hidden:
++            preds_flat, hidden = generated
++        else:
++            preds_flat, hidden = generated, None
+         # 缓存起来，外部如果需要蒸馏/对齐，从这里拿
+         self._last_hidden = hidden
+         preds = preds_flat.view(B, D, self.pred_len).permute(0, 2, 1).contiguous()
+diff --git a/run.py b/run.py
+index ef64244..4bb18a4 100644
+--- a/run.py
++++ b/run.py
+@@ -14,16 +14,13 @@ import numpy as np
+ import sys
+ sys.dont_write_bytecode = True
+ 
+-os.environ['CUDA_VISIBLE_DEVICE']='0,1'
++os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
+ 
+ if __name__ == '__main__':
+-    fix_seed = 2025
+-    random.seed(fix_seed)
+-    torch.manual_seed(fix_seed)
+-    np.random.seed(fix_seed)
+-
+     parser = argparse.ArgumentParser(description='DistilTS')
+ 
++    parser.add_argument('--seed', type=int, default=2025, help='random seed')
++
+     # basic config
+     parser.add_argument('--task_name', type=str, default='long_term_forecast')
+     parser.add_argument('--is_training', type=int, required=True, default=1, help='status')
+@@ -128,6 +125,10 @@ if __name__ == '__main__':
+     parser.add_argument('--vt_loss', type=int, default=1, help='vt_loss')
+ 
+     args = parser.parse_args()
++    random.seed(args.seed)
++    torch.manual_seed(args.seed)
++    torch.cuda.manual_seed_all(args.seed)
++    np.random.seed(args.seed)
+     if torch.cuda.is_available() and args.use_gpu:
+         args.device = torch.device('cuda:{}'.format(args.gpu))
+         print('Using GPU')
+@@ -186,4 +187,4 @@ if __name__ == '__main__':
+         if args.gpu_type == 'mps':
+             torch.backends.mps.empty_cache()
+         elif args.gpu_type == 'cuda':
+-            torch.cuda.empty_cache()
+\ No newline at end of file
++            torch.cuda.empty_cache()

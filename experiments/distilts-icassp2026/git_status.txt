@@ -1,0 +1,18 @@
+ M exp/exp_DistilTS.py
+ M exp/exp_DistilTS_FDKD.py
+ M exp/exp_DistilTS_TKD.py
+ M exp/exp_basic.py
+ M models/TimeMoe.py
+ M run.py
+?? .gitignore
+?? REPRODUCTION.md
+?? REPRODUCTION_REPORT.md
+?? SETUP_AND_CODE_CHANGES.md
+?? STOPPED_STATE_2026-08-05.md
+?? core_reproduction_status.py
+?? monitor_resources.py
+?? reproduce_core.py
+?? reproduce_supported.py
+?? reproduction_status.py
+?? requirements-reproduction.txt
+?? run_local.sh
